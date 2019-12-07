@@ -1,7 +1,6 @@
 import numpy as np
 import wave
 import struct
-import matplotlib.pyplot as plt
 
 # frequency is the number of times a wave repeats a second
 frequency = 1000
@@ -14,6 +13,7 @@ amplitude = 16000
 file = "test.wav"
 
 sine_wave = [np.sin(2 * np.pi * frequency * x / sampling_rate) for x in range(num_samples)]
+print(sine_wave)
 
 nframes = num_samples
 comptype = "NONE"
