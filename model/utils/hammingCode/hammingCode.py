@@ -2,8 +2,8 @@ import math
 
 
 class HammingCode:
-    def __init__(self):
-        self.__control_bits = list()
+    def __init__(self, msg):
+        pass
 
     def __compute_control_bits(self, n):
         number = math.log2(n)
