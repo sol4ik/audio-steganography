@@ -41,6 +41,8 @@ For **text message coding** we use ASCII table decimal codes converted to binary
 
 *P.S. Since ASCII table is quite large, for starters we're going to use the number of letter in alphbet,meaning we'll be able code only 26 small latin letters and a space*.
 
+*P.S. We were also thinking on using **Huffman code** insted in case we need to transfer a long text message, but for now we're focusing on the one descibed above.*
+
 As we also need to detect and correct errors in the transfered message, we apply the **Hamming codes**, as we are guaranted errors detenction with only **log2 n** control bits per **n** information bits. 
 
 #### :: digital signal hiding
