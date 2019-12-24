@@ -1,12 +1,38 @@
 # audio-steganography
-Course project for Principles of Computer Organisation by **[Solomiia Leno](https://github.com/sol4ik)** and **[Ihor Titov](https://github.com/lurak)**.
+Course project for Principles of Computer Organisation by **[Solomiia Leno](https://github.com/sol4ik)** and **[Ihor Titov](https://github.com/lurak)** on **steganographic tranfer of data by means of audio signals**.
 
 ---
+## requirements
+* **two devices** for coding and decoding the message
+ * **i/o for coding device**
+  * *(not decided yet)*
+  * FM4 CN5 Jack for headphone
+ * **i/o for decoding device**
+  * UART *(not approved yet)*
+  * LCD screen
+* stability to **archeiving of the sound**
+* ability to transfer the sound by phone-lines
+* **real-time** message decoding
+* ability to **correct errors in message**, in case of occurance
+---
 
-### algoritms
+## algoritms
+As our project consists of two processes - coding and decoding the message - we've been developing two different algorithms.
+
+### coding
+For message hiding we've researched different approaches as echo hiding, lower tones insertion and so on but we decided to implement the basic one - **amplitude modulation**.
+
 
 ---
-### hardware
-For the hardware part of the project we have **fm4-176l-s6e2cc-eth-Arm® Cortex®-M4 MCU Starter Kit with Ethernet and USB Host(https://www.cypress.com/documentation/development-kitsboards/sk-fm4-176l-s6e2cc-fm4-family-quick-start-guide)**. 
+## hardware
+For the hardware part of the project we have **[fm4-176l-s6e2cc-eth-Arm® Cortex®-M4 MCU Starter Kit with Ethernet and USB Host](https://www.cypress.com/documentation/development-kitsboards/sk-fm4-176l-s6e2cc-fm4-family-quick-start-guide)**. 
+The **IDE** for development is **[Keil µVision® IDE 5](http://www2.keil.com/mdk5/uvision/)**.
+
+So far, we've only processed the **sound generation** scheme.
+
+
+---
+## latest updates
+
 
 ---
