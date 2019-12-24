@@ -8,6 +8,8 @@ Final project for Principles of Computer Organisation course by **[Solomiia Leno
    2. [decoding](#decoding)
    3. [model](#model)
 3. [hardware](#hardware)
+   1. [schemes](#schemes)
+4. [updates](#updates)
 ---
 ## requirements
 At the start of project development, we got the following requirements for both hardware part and the algorithm realization:
@@ -90,7 +92,7 @@ Other imporant part is also **i/o** of the data.
 *(the schemes are yet to be developed)*
 
 ---
-## latest updates
+## ::updates
 
 
 ---
