@@ -99,9 +99,9 @@ Other imporant part is also **i/o** of the data.
 * meetings with mentor
 * algorithms reseraches
 * built coding algorithm
-* developed model for codingalgorithm
+* developed model for coding algorithm
 * process on decoding algorithm
-* read all the daasheets for FM4
+* read all the datasheets for FM4
 * researes of examples for sound generation
 
 **current problems**
