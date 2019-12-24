@@ -1,0 +1,10 @@
+--cpu=Cortex-M4 --fpu=SoftVFP
+".\output\release\system_s6e2cc.o"
+".\output\release\main.o"
+".\output\release\startup_s6e2cc.o"
+".\output\release\i2c.o"
+".\output\release\i2scodec_wm8731.o"
+".\output\release\pixiedust_sound_i2s.o"
+--strict --scatter ".\output\release\s6e2cc_i2s-sk-fm4-176l-s6se2cc.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info
+--list ".\output\release\s6e2cc_i2s-sk-fm4-176l-s6se2cc.map" -o .\output\release\s6e2cc_i2s-sk-fm4-176l-s6se2cc.axf

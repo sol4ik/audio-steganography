@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>1069922412</fileChecksum>
+  <configuration>
+    <name>S6E2CCAx0A_Release</name>
+    <outputs>
+      <file>$PROJ_DIR$\..\source\i2s_clk.c</file>
+      <file>$PROJ_DIR$\..\source\i2c.h</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cm4.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\..\source\i2scodec_WM8731.h</file>
+      <file>$PROJ_DIR$\output\release\obj\main.pbi</file>
+      <file>$PROJ_DIR$\output\release\obj\main.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\output\release\exe\s6e2cc_i2s.out</file>
+      <file>$PROJ_DIR$\output\release\obj\pixiedust_sound_i2s.pbi</file>
+      <file>$PROJ_DIR$\..\source\i2s_clk.h</file>
+      <file>$PROJ_DIR$\..\..\common\base_types.h</file>
+      <file>$PROJ_DIR$\..\..\common\s6e2cc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\output\release\exe\s6e2cc_i2s-sk-fm4-216-ethernet.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\..\source\pixiedust_sound_i2s.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\output\release\obj\startup_s6e2cc.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+      <file>$PROJ_DIR$\output\release\obj\i2scodec_sgtl5000.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\..\source\i2s.h</file>
+      <file>$PROJ_DIR$\..\source\i2s.c</file>
+      <file>$PROJ_DIR$\..\source\i2scodec_sgtl5000.h</file>
+      <file>$PROJ_DIR$\output\release\obj\i2s_clk.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\output\release\obj\tinkerbell_sound_i2s.pbi</file>
+      <file>$PROJ_DIR$\output\release\obj\system_s6e2cc.o</file>
+      <file>$PROJ_DIR$\output\release\exe\s6e2cc_i2s-sk-fm4-176l-s6se2cc.out</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\output\release\obj\s6e2cc_i2s-sk-fm4-176l-s6se2cc.pbd</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cm4_simd.h</file>
+      <file>$PROJ_DIR$\output\release\obj\i2s_clk.o</file>
+      <file>$PROJ_DIR$\..\source\mcu.h</file>
+      <file>$PROJ_DIR$\output\release\obj\tinkerbell_sound_i2s.o</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmFunc.h</file>
+      <file>$PROJ_DIR$\..\..\common\system_s6e2cc.h</file>
+      <file>$PROJ_DIR$\..\source\tinkerbell_sound_i2s.h</file>
+      <file>$PROJ_DIR$\output\release\exe\s6e2cc_template.out</file>
+      <file>$PROJ_DIR$\output\release\obj\i2s.o</file>
+      <file>$PROJ_DIR$\output\release\obj\system_s6e2cc.pbi</file>
+      <file>$PROJ_DIR$\output\release\obj\i2scodec_sgtl5000.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\..\source\tinkerbell_sound_i2s.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\config\s6e2ccax0a.icf</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmSimd.h</file>
+      <file>$PROJ_DIR$\output\release\obj\i2scodec_WM8731.o</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$PROJ_DIR$\..\source\i2scodec_WM8731.c</file>
+      <file>$PROJ_DIR$\..\source\main.c</file>
+      <file>$PROJ_DIR$\..\..\common\system_s6e2cc.c</file>
+      <file>$PROJ_DIR$\..\source\i2c.c</file>
+      <file>$PROJ_DIR$\startup_s6e2cc.s</file>
+      <file>$PROJ_DIR$\..\..\Readme.txt</file>
+      <file>$PROJ_DIR$\output\release\obj\i2scodec_WM8731.pbi</file>
+      <file>$PROJ_DIR$\output\release\obj\i2s.pbi</file>
+      <file>$PROJ_DIR$\output\release\obj\i2c.pbi</file>
+      <file>$PROJ_DIR$\..\source\pixiedust_sound_i2s.c</file>
+      <file>$TOOLKIT_DIR$\CMSIS\Include\core_cmInstr.h</file>
+      <file>$PROJ_DIR$\output\release\obj\pixiedust_sound_i2s.o</file>
+      <file>$PROJ_DIR$\..\source\i2scodec_sgtl5000.c</file>
+      <file>$PROJ_DIR$\output\release\obj\i2c.o</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\..\source\i2s_clk.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 10 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 36 41 11 21 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 36 41 11 21 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\output\release\exe\s6e2cc_i2s.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 50 67 44 37 23 6 20 31 39 17 14 53 47</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\output\release\exe\s6e2cc_i2s-sk-fm4-216-ethernet.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 50 67 23 6 20 31 39 17 14 53 47</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\i2s.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 61</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 36 41 11 21 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 36 41 11 21 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\output\release\exe\s6e2cc_i2s-sk-fm4-176l-s6se2cc.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 50 67 52 6 65 20 31 17 14 53 47</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\output\release\exe\s6e2cc_template.out</name>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 50 67 44 37 23 6 20 31 17 14 53 47</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\tinkerbell_sound_i2s.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 42 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 36 41 11 21 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\i2scodec_WM8731.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 52</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 60</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 4 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 51 41 11 21 16 1</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7 19 3 16 11 38 1 12 2 41 40 21 4 64 51 49 33 13 34 29 22 24</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 51 41 4 11 21 16 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19 21 49 34 7 18 12 64 51 13 4 33 29 22 24 11 16 38 2 41 40 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\common\system_s6e2cc.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 31</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 45</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 51 41</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49 13 64 51 12 19 34 33 29 22 24 7 38 2 41 40 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\i2c.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 67</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 62</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 1 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 51 41 11 21 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 64 19 12 51 1 38 49 41 33 7 11 2 40 3 13 34 29 24 21 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup_s6e2cc.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\pixiedust_sound_i2s.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 18 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 51 41 11 21 16</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22 64 19 51 41 49 38 12 33 7 11 2 18 40 3 13 34 29 24 21 16</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\source\i2scodec_sgtl5000.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 27 38 12 2 19 7 49 3 34 29 33 13 64 22 24 40 36 41 11 21 16 1</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+</project>
+
+

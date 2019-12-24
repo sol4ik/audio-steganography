@@ -1,0 +1,89 @@
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[PlDriver]
+MemConfigValue=C:\work\_FM3\_PDL\s6e2cc_i2s-sk-fm4-176l-s6se2cc-v10\example\IAR\..\..\svd\S6E2CC.xml
+FirstRun=0
+[PlCacheRanges]
+CustomRanges0=0 0 536870912 1 0
+CustomRangesText0=Code
+CustomRanges1=0 536870912 33554432 0 0
+CustomRangesText1=SRAM
+CustomRanges2=0 570425344 33554432 0 0
+CustomRangesText2=bit-banding
+CustomRanges3=0 1073741824 33554432 2 0
+CustomRangesText3=Peripheral
+CustomRanges4=0 1107296256 33554432 2 0
+CustomRangesText4=bit-banding
+CustomRanges5=0 3758096384 536870912 2 0
+CustomRangesText5=Private peripheral
+[Jet]
+JetConnSerialNo=37161
+JetConnFoundProbes=
+DisableInterrupts=0
+MultiCoreRunAll=0
+OnlineReset=Software
+[DebugChecksum]
+Checksum=-972097597
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[SWOManager]
+SamplingDivider=8192
+OverrideClock=0
+CpuClock=425081264
+SwoClock=860702303
+DataLogMode=0
+ItmPortsEnabled=63
+ItmTermIOPorts=1
+ItmLogPorts=0
+ItmLogFile=$PROJ_DIR$\ITM.log
+PowerForcePC=1
+PowerConnectPC=1
+[ArmDriver]
+EnableCache=1
+[Trace2]
+Enabled=0
+ShowSource=0
+[SWOTraceWindow]
+ForcedPcSampling=0
+ForcedInterruptLogs=0
+ForcedItmLogs=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[CallStackLog]
+Enabled=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Aliases]
+Count=0
+SuppressDialog=0
