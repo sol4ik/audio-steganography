@@ -45,10 +45,10 @@ Since amplitude modulation is very basic, it's pretty easy to be detected even b
 *(info yet to be written)*
 
 ---
-### model
+### ::model
 In order to test the algorithm we developed a simulation model in Python.
 
-Here are the command needed if you want to test it on your own.
+Here are the commands needed if you want to test it on your own.
 
 *P.S. The model works with **.wav** file format*.
 
@@ -60,17 +60,18 @@ Here are the command needed if you want to test it on your own.
 The main file has the following options to run:
 * **code / decode** mode - you choose whether you want to code some message or decode from existing .wav file
 * [optional] **log** - you choose whether you want to see the steps of coding/decoding functions
-
-     python main.py
+    
+      python main.py code log
 
 ---
 ## hardware
 For the hardware part of the project we have **[fm4-176l-s6e2cc-eth-Arm® Cortex®-M4 MCU Starter Kit with Ethernet and USB Host](https://www.cypress.com/documentation/development-kitsboards/sk-fm4-176l-s6e2cc-fm4-family-quick-start-guide)**. 
 
-The **IDE** for development is **[Keil µVision® IDE 5](http://www2.keil.com/mdk5/uvision/)**.
+**IDE** choice for the development is **[Keil µVision® IDE 5](http://www2.keil.com/mdk5/uvision/)**.
 
-As we have all the functionality need already implemented in the FM4, there was no need for any additinal work with hardware.
+Since we have all the functionality need already implemented in the FM4, there was no need for any additinal work with hardware.
 
+### ::schemes
 The basic process here is the sound processing, so here's the **sound generation and processing** scheme.
 
 ![sound generation scheme](https://github.com/sol4ik/audio-steganography/blob/master/pics/sound_generation.jpg)
