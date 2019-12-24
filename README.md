@@ -46,7 +46,22 @@ Since amplitude modulation is very basic, it's pretty easy to be detected even b
 
 ---
 ### model
-*(info is yet to be written)*
+In order to test the algorithm we developed a simulation model in Python.
+
+Here are the command needed if you want to test it on your own.
+
+*P.S. The model works with **.wav** file format*.
+
+    git clone https://github.com/sol4ik/audio-steganography.git
+    cd audio-steganography/model
+    
+    pip install -r requirements.txt
+    
+The main file has the following options to run:
+* **code / decode** mode - you choose whether you want to code some message or decode from existing .wav file
+* [optional] **log** - you choose whether you want to see the steps of coding/decoding functions
+
+     python main.py
 
 ---
 ## hardware
