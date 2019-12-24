@@ -107,4 +107,6 @@ Other imporant part is also **i/o** of the data.
 **current problems**
 * no working examples for the FM4 (only the ones for LED blinking)
 
+### ::until Dec 26 [pre-demo]
+
 ---
