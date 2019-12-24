@@ -1,6 +1,13 @@
 # audio-steganography
 Final project for Principles of Computer Organisation course by **[Solomiia Leno](https://github.com/sol4ik)** and **[Ihor Titov](https://github.com/lurak)** on **steganographic tranfer of data by means of audio signals**.
 
+## ::table of contents
+1. [requirements](#requirements)
+2. [algorithms](#algorithms)
+   1. [coding](#coding)
+   2. [decoding](#decoding)
+   3. [model](#model)
+3. [hardware](#hardware)
 ---
 ## requirements
 At the start of project development, we got the following requirements for both hardware part and the algorithm realization:
@@ -17,7 +24,7 @@ At the start of project development, we got the following requirements for both 
 * ability to **correct errors in message**, in case of occurance
 ---
 
-## algoritms
+## algorithms
 As our project consists of two processes - coding and decoding the message - we've been developing two different algorithms.
 
 ### coding
