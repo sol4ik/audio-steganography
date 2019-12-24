@@ -95,6 +95,16 @@ Other imporant part is also **i/o** of the data.
 
 ---
 ## ::updates
+### ::until Dec 24
+* meetings with mentor
+* algorithms reseraches
+* built coding algorithm
+* developed model for codingalgorithm
+* process on decoding algorithm
+* read all the daasheets for FM4
+* researes of examples for sound generation
 
+**current problems**
+* no working examples for the FM4 (only the ones for LED blinking)
 
 ---
