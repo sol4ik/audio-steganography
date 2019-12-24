@@ -1,0 +1,15 @@
+.\output\release\main.o: ..\main.c
+.\output\release\main.o: ..\..\common\mcu.h
+.\output\release\main.o: ..\..\common\s6e2ccxh.h
+.\output\release\main.o: ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h
+.\output\release\main.o: F:\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\release\main.o: ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h
+.\output\release\main.o: ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h
+.\output\release\main.o: ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h
+.\output\release\main.o: ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h
+.\output\release\main.o: ..\..\common\system_s6e2cc.h
+.\output\release\main.o: ..\..\common\gpio_s6e2ccxh.h
+.\output\release\main.o: ..\pdl_user.h
+.\output\release\main.o: ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\drivers\pdl.h
+.\output\release\main.o: ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\drivers\base_types.h
+.\output\release\main.o: F:\ARM\ARMCC\Bin\..\include\stddef.h

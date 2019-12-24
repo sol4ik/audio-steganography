@@ -1,0 +1,7 @@
+--cpu Cortex-M4.fp
+".\output\release\system_s6e2cc.o"
+".\output\release\main.o"
+".\output\release\startup_s6e2cc.o"
+--nodebug --strict --scatter ".\linker\s6e2cca_rom.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info
+--list ".\output\release\s6e2ccxh_template.map" -o .\output\release\s6e2ccxh_template.axf

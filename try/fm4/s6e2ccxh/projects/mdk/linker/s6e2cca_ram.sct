@@ -1,0 +1,37 @@
+#! armcc -E
+/*******************************************************************************
+* \file     s6e2cca_ram.sct
+* 
+* \version  1.0
+*
+* \brief    Linker file for the Keil ARM C/C++ Compiler
+*
+********************************************************************************
+* Copyright 2016, Cypress Semiconductor Corporation. All rights reserved.
+* You may use this file only in accordance with the license, terms, conditions,
+* disclaimers, and limitations in the end user license agreement accompanying
+* the software package with which this file was provided.
+* CYPRESS PROVIDES THIS SOFTWARE "AS IS" AND MAKES NO WARRANTY
+* OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO THIS SOFTWARE,
+* INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+* MERCHANTABILITY, NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR
+* PURPOSE.
+*******************************************************************************/
+
+#define IROM1_START 0x1FFD0000
+#define IROM1_SIZE  0x00018000
+#define IRAM1_START 0x1FFE8000
+#define IRAM1_SIZE  0x00018000
+#define IRAM2_START 0x20038000
+#define IRAM2_SIZE  0x00010000
+
+LR_IROM1 IROM1_START IROM1_SIZE  {    ; load region size_region
+  ER_IROM1 IROM1_START IROM1_SIZE  {  ; load address = execution address
+   *.o (RESET, +First)
+   *(InRoot$$Sections)
+   .ANY (+RO)
+  }
+  RW_IRAM1 IRAM1_START IRAM1_SIZE  {  ; RW data
+   .ANY (+RW +ZI)
+  }
+}

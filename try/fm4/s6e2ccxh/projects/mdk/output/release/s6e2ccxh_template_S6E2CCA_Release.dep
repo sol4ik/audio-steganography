@@ -1,0 +1,28 @@
+Dependencies for Project 's6e2ccxh_template', Target 'S6E2CCA_Release': (DO NOT MODIFY !)
+F (..\..\common\system_s6e2cc.c)(0x579B5A66)(-c --cpu Cortex-M4.fp -D__EVAL -O3 --apcs=interwork -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include -I ..\..\common -I ..\..\projects -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\drivers-I.\RTE\_S6E2CCA_Release-IF:\ARM\CMSIS\5.5.1\Device\ARM\ARMCM4\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DARMCM4_FP-o .\output\release\system_s6e2cc.o --depend .\output\release\system_s6e2cc.d)
+I (..\..\common\mcu.h)(0x579B5DF0)
+I (..\..\common\s6e2ccxh.h)(0x579B5E0E)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
+I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
+I (..\..\common\system_s6e2cc.h)(0x579B5A66)
+I (..\..\common\gpio_s6e2ccxh.h)(0x579B5A66)
+F (..\main.c)(0x5DFA61EB)(-c --cpu Cortex-M4.fp -D__EVAL -O3 --apcs=interwork -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include -I ..\..\common -I ..\..\projects -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\drivers-I.\RTE\_S6E2CCA_Release-IF:\ARM\CMSIS\5.5.1\Device\ARM\ARMCM4\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -DARMCM4_FP-o .\output\release\main.o --depend .\output\release\main.d)
+I (..\..\common\mcu.h)(0x579B5DF0)
+I (..\..\common\s6e2ccxh.h)(0x579B5E0E)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
+I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
+I (..\..\common\system_s6e2cc.h)(0x579B5A66)
+I (..\..\common\gpio_s6e2ccxh.h)(0x579B5A66)
+I (..\pdl_user.h)(0x5A3D32F2)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\drivers\pdl.h)(0x5A3D3300)
+I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\drivers\base_types.h)(0x5A3D3300)
+I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
+F (.\startup_s6e2cc.s)(0x579B5DF0)(--cpu Cortex-M4.fp --pd "__EVAL SETA 1" --apcs=interwork -I.\RTE\_S6E2CCA_Release-IF:\ARM\CMSIS\5.5.1\Device\ARM\ARMCM4\Include-IF:\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 528" --pd "ARMCM4_FP SETA 1"-o .\output\release\startup_s6e2cc.o --depend .\output\release\startup_s6e2cc.d)
