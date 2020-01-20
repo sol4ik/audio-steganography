@@ -13,12 +13,6 @@ Final project for Principles of Computer Organisation course by **[Solomiia Leno
 ## requirements
 At the start of project development, we got the following requirements for both hardware part and the algorithm realization:
 * **two devices** for coding and decoding the message
- * **i/o for coding device**
-  * *(not decided yet)*
-  * FM4 CN5 Jack for headphone
- * **i/o for decoding device**
-  * UART *(not approved yet)*
-  * LCD screen
 * stability to **archeiving of the sound**
 * ability to transfer the sound by phone-lines
 * **real-time** message decoding
