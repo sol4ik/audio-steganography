@@ -48,12 +48,25 @@ As we also need to detect and correct errors in the transfered message, we apply
 #### :: digital signal hiding
 For message hiding we've researched different approaches as echo hiding, lower tones insertion and so on but we decided to implement the basic one - **amplitude modulation**.
 
-Since amplitude modulation is very basic, it's pretty easy to be detected even by human himself.
+Since amplitude modulation is very basic, it's pretty easy to be detected even by human himself. That's why we tried one more approach - **phase modulation**.
+
+This one is much mode stable to noises but quite easy to detect.
+
+For now, we have some other ideas for the algorithm including the ones using noise generation and Fourier transform but we stoped on previous two for the hardware implementation.
 
 #### :: sound generation
 
+As for starters, we're generating the sound by ourselves. 
+
+Basically, we generate a single sine wave and modulate it with the information signal.
+
+For the sine generation we're using simple Maclaurin series expansion for half-period of sine.
+
+
 ### decoding
-*(info yet to be written)*
+As we're currently working out the amplitude modulation model, the decoding algorithm is **amplitude demodulation**.
+
+To be more precise, we're using **envelope method** based on peeks calculation. Although this method is very unstable for the noises in sound wave and it's quite hard to implement derivatives calculation on the hardware, so we're considering working out **square law detection**.
 
 ---
 ### ::model
@@ -76,22 +89,21 @@ The main file has the following options to run:
 
 ---
 ## hardware
-For the hardware part of the project we have **[fm4-176l-s6e2cc-eth-Arm® Cortex®-M4 MCU Starter Kit with Ethernet and USB Host](https://www.cypress.com/documentation/development-kitsboards/sk-fm4-176l-s6e2cc-fm4-family-quick-start-guide)**. 
+Our first choise for the hardware part of the project was **[fm4-176l-s6e2cc-eth-Arm® Cortex®-M4 MCU Starter Kit with Ethernet and USB Host](https://www.cypress.com/documentation/development-kitsboards/sk-fm4-176l-s6e2cc-fm4-family-quick-start-guide)**. 
 
-**IDE** choice for the development is **[Keil µVision® IDE 5](http://www2.keil.com/mdk5/uvision/)**.
+**IDE** choice for the development was **[Keil µVision® IDE 5](http://www2.keil.com/mdk5/uvision/)**.
 
-Since we have all the functionality need already implemented in the FM4, there was no need for any additinal work with hardware.
+Since finding decent data sheet and examples for this device turned out to be too hard, we decided to use other device.
 
-### ::schemes
-The basic process here is the sound processing, so here's the **sound generation and processing** scheme.
+Our next choice was **[PSoC 4 BLE Pioneer Kit](https://www.cypress.com/products/psoc-4-ble-bluetooth-smart)**.
 
-![sound generation scheme](https://github.com/sol4ik/audio-steganography/blob/master/pics/sound_generation.jpg)
+The IDE choise is naturally **PSoC creator**.
 
-The sound is generated as the **sine wave**, as we mentioned in the previous section, at the **processing unit**. The output signals with hidden message then are passed to the **DAC** and the analog signal is then played at **the headphones jack**
+Since DAC is not implemented in PSoC we decedid to generate the needed sound wave using **PWM**.
 
-Other imporant part is also **i/o** of the data.
+Here's the **Top Design** for the modulating part.
 
-*(the schemes are yet to be developed)*
+![top design]()
 
 ---
 ## ::updates
