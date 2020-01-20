@@ -1,0 +1,6 @@
+C:\Users\Home\Desktop\POK\PWM\PWM.cydsn\PWM.cyprj|2a6d4358-e90a-4985-b6cc-31e585826fce
+F:\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|a9d9a473-d339-47f4-afb2-b183ceec8585
+C:\Users\Home\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|f3659d4b-5c4d-4925-81dd-e2e87ad4a66d
+F:\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|90030112-64c4-46fc-99a4-79b605f42245
+F:\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8f9056de-b8af-44e0-8446-49cece5f4f3c
+F:\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|f4807368-686a-468c-84dd-f5d5d0eda6b3
