@@ -1,71 +1,0 @@
-Dependencies for Project 's6e2cc_i2s-sk-fm4-176l-s6se2cc', Target 'S6E2CCAx0A_Release': (DO NOT MODIFY !)
-F (..\..\common\system_s6e2cc.c)(0x53D7867A)(-c --cpu Cortex-M4 -D__EVAL --li -g -O0 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-IF:\ARM\RV31\INC-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528"-o .\output\release\system_s6e2cc.o --omf_browse .\output\release\system_s6e2cc.crf --depend .\output\release\system_s6e2cc.d)
-I (..\..\example\source\mcu.h)(0x5448D274)
-I (..\..\common\s6e2cc.h)(0x54479E24)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x53DF223C)
-F (..\source\main.c)(0x5492A054)(-c --cpu Cortex-M4 -D__EVAL --li -g -O0 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-IF:\ARM\RV31\INC-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528"-o .\output\release\main.o --omf_browse .\output\release\main.crf --depend .\output\release\main.d)
-I (..\source\mcu.h)(0x5448D274)
-I (..\..\common\s6e2cc.h)(0x54479E24)
-I (..\..\example\source\mcu.h)(0x5448D274)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x53DF223C)
-I (..\source\i2scodec_WM8731.h)(0x546C81FE)
-I (..\..\common\base_types.h)(0x5447A0D2)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (..\source\pixiedust_sound_i2s.h)(0x545B385C)
-F (..\..\Readme.txt)(0x5492A0E2)()
-F (.\startup_s6e2cc.s)(0x53DB7AF6)(--cpu Cortex-M4 --li --pd "__EVAL SETA 1" -g --apcs=interwork -IF:\ARM\RV31\INC-IF:\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 528"-o .\output\release\startup_s6e2cc.o --depend .\output\release\startup_s6e2cc.d)
-F (..\source\i2c.c)(0x546F31F6)(-c --cpu Cortex-M4 -D__EVAL --li -g -O0 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-IF:\ARM\RV31\INC-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528"-o .\output\release\i2c.o --omf_browse .\output\release\i2c.crf --depend .\output\release\i2c.d)
-I (..\source\i2c.h)(0x546C839C)
-I (..\source\mcu.h)(0x5448D274)
-I (..\..\common\s6e2cc.h)(0x54479E24)
-I (..\..\example\source\mcu.h)(0x5448D274)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x53DF223C)
-I (..\..\common\base_types.h)(0x5447A0D2)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-F (..\source\i2scodec_WM8731.c)(0x54745FFE)(-c --cpu Cortex-M4 -D__EVAL --li -g -O0 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-IF:\ARM\RV31\INC-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528"-o .\output\release\i2scodec_wm8731.o --omf_browse .\output\release\i2scodec_wm8731.crf --depend .\output\release\i2scodec_wm8731.d)
-I (..\source\i2scodec_WM8731.h)(0x546C81FE)
-I (..\source\mcu.h)(0x5448D274)
-I (..\..\common\s6e2cc.h)(0x54479E24)
-I (..\..\example\source\mcu.h)(0x5448D274)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x53DF223C)
-I (..\..\common\base_types.h)(0x5447A0D2)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (..\source\i2c.h)(0x546C839C)
-F (..\source\pixiedust_sound_i2s.c)(0x545B383E)(-c --cpu Cortex-M4 -D__EVAL --li -g -O0 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-IF:\ARM\RV31\INC-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528"-o .\output\release\pixiedust_sound_i2s.o --omf_browse .\output\release\pixiedust_sound_i2s.crf --depend .\output\release\pixiedust_sound_i2s.d)
-I (..\source\pixiedust_sound_i2s.h)(0x545B385C)
-I (..\source\mcu.h)(0x5448D274)
-I (..\..\common\s6e2cc.h)(0x54479E24)
-I (..\..\example\source\mcu.h)(0x5448D274)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x53DF223C)
-I (..\..\common\base_types.h)(0x5447A0D2)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)

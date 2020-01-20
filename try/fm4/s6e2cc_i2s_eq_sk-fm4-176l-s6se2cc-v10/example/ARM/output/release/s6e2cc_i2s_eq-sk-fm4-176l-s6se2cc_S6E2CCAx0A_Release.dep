@@ -1,188 +1,0 @@
-Dependencies for Project 's6e2cc_i2s_eq-sk-fm4-176l-s6se2cc', Target 'S6E2CCAx0A_Release': (DO NOT MODIFY !)
-F (..\..\common\system_s6e2cc.c)(0x54E72F3C)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\system_s6e2cc.o --omf_browse .\output\release\system_s6e2cc.crf --depend .\output\release\system_s6e2cc.d)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-F (..\source\main.c)(0x54EAFAAC)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\main.o --omf_browse .\output\release\main.crf --depend .\output\release\main.d)
-I (..\source\globals.h)(0x54EAFBD2)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\source\i2scodec_WM8731.h)(0x54EAE0AD)
-I (..\source\buffer.h)(0x54EADDF3)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\arm_math.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (..\source\windowfunction.h)(0x54EAE766)
-I (..\source\equalizer.h)(0x54EADF32)
-I (..\source\userio.h)(0x54EAE6F6)
-F (..\..\Readme.txt)(0x56AF1F6D)()
-F (.\startup_s6e2cc.s)(0x53DB9716)(--cpu Cortex-M4 --li --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 528" --pd "_RTE_ SETA 1"-o .\output\release\startup_s6e2cc.o --depend .\output\release\startup_s6e2cc.d)
-F (..\source\i2c.c)(0x54E72F2C)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\i2c.o --omf_browse .\output\release\i2c.crf --depend .\output\release\i2c.d)
-I (..\source\i2c.h)(0x54E72F2C)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-F (..\source\i2scodec_WM8731.c)(0x54EAE948)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\i2scodec_wm8731.o --omf_browse .\output\release\i2scodec_wm8731.crf --depend .\output\release\i2scodec_wm8731.d)
-I (..\source\i2scodec_WM8731.h)(0x54EAE0AD)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (..\source\i2c.h)(0x54E72F2C)
-F (..\source\buffer.c)(0x54EADD6B)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\buffer.o --omf_browse .\output\release\buffer.crf --depend .\output\release\buffer.d)
-I (..\source\buffer.h)(0x54EADDF3)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\source\globals.h)(0x54EAFBD2)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\arm_math.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (..\source\windowfunction.h)(0x54EAE766)
-F (..\source\equalizer.c)(0x54EAFA69)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\equalizer.o --omf_browse .\output\release\equalizer.crf --depend .\output\release\equalizer.d)
-I (..\source\equalizer.h)(0x54EADF32)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\source\globals.h)(0x54EAFBD2)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\arm_math.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-F (..\source\idlemeasurement.c)(0x54EADFCB)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\idlemeasurement.o --omf_browse .\output\release\idlemeasurement.crf --depend .\output\release\idlemeasurement.d)
-I (..\source\idlemeasurement.h)(0x54EAEBD2)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-F (..\source\uart.c)(0x54EAE436)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\uart.o --omf_browse .\output\release\uart.crf --depend .\output\release\uart.d)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\source\uart.h)(0x54EAE472)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
-F (..\source\uartdraw.c)(0x54EAE539)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\uartdraw.o --omf_browse .\output\release\uartdraw.crf --depend .\output\release\uartdraw.d)
-I (..\source\uartdraw.h)(0x54EAE60B)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\source\uart.h)(0x54EAE472)
-I (F:\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
-F (..\source\userio.c)(0x54EAF2C6)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\userio.o --omf_browse .\output\release\userio.crf --depend .\output\release\userio.d)
-I (..\source\userio.h)(0x54EAE6F6)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\source\equalizer.h)(0x54EADF32)
-I (..\source\globals.h)(0x54EAFBD2)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\arm_math.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (..\source\uart.h)(0x54EAE472)
-I (..\source\uartdraw.h)(0x54EAE60B)
-I (F:\ARM\ARMCC\include\stdio.h)(0x5CEBCE42)
-F (..\source\windowfunction.c)(0x54EAE769)(-c --cpu Cortex-M4 -D__EVAL --li -g -O3 --apcs=interwork -I ..\..\common -I ..\..\example\source -I ..\..\library\driver -I ..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include-I.\RTE\_S6E2CCAx0A_Release-IF:\ARM\CMSIS\5.5.1\CMSIS\DSP\Include-IF:\ARM\CMSIS\Include-D__UVISION_VERSION="528" -D_RTE_ -DARM_MATH_CM4-o .\output\release\windowfunction.o --omf_browse .\output\release\windowfunction.crf --depend .\output\release\windowfunction.d)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\arm_math.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cm4.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\stdint.h)(0x5CEBCE42)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmInstr.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\cmsis_armcc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmFunc.h)(0x5A3D32E4)
-I (..\..\..\..\..\Documents\Cypress\PDL\2.1.0\cmsis\include\core_cmSimd.h)(0x5A3D32E4)
-I (F:\ARM\ARMCC\include\string.h)(0x5CEBCE42)
-I (F:\ARM\ARMCC\include\math.h)(0x5CEBCE36)
-I (..\source\windowfunction.h)(0x54EAE766)
-I (..\..\common\base_types.h)(0x54EAE934)
-I (F:\ARM\ARMCC\include\stddef.h)(0x5CEBCE42)
-I (..\source\mcu.h)(0x5448EE93)
-I (..\..\common\s6e2cc.h)(0x5447BA43)
-I (..\..\example\source\mcu.h)(0x5448EE93)
-I (..\..\common\system_s6e2cc.h)(0x54E72F44)
-I (..\source\globals.h)(0x54EAFBD2)
-F (..\source\globals.h)(0x54EAFBD2)()
-F (F:\ARM\CMSIS\5.5.1\CMSIS\DSP\Lib\ARM\arm_cortexM4l_math.lib)(0x5C8BB458)()
