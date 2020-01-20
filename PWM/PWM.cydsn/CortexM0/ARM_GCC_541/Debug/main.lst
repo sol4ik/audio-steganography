@@ -1,0 +1,2314 @@
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_i2d
+  20              		.global	__aeabi_dmul
+  21              		.global	__aeabi_dcmplt
+  22              		.global	__aeabi_d2iz
+  23              		.section	.text.power,"ax",%progbits
+  24              		.align	2
+  25              		.global	power
+  26              		.code	16
+  27              		.thumb_func
+  28              		.type	power, %function
+  29              	power:
+  30              	.LFB36:
+  31              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** 
+  14:main.c        **** double PI = 3.14;
+  15:main.c        **** int N = 4;
+  16:main.c        **** static const double POWERS[] = {1, 3, 5, 7};
+  17:main.c        **** static const double FACTORIALS[] = {1, 6, 120, 5040};
+  18:main.c        **** 
+  19:main.c        **** 
+  20:main.c        **** double sin(double x)
+  21:main.c        **** {
+  22:main.c        ****     int halfPeriodsNum = x / PI;
+  23:main.c        ****     x = x - halfPeriodsNum * PI;
+  24:main.c        ****     double toReturn = 0;
+  25:main.c        ****     for (int i = 0; i < N; i++)
+  26:main.c        ****     {
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 2
+
+
+  27:main.c        ****         toReturn +=  power(-1, (i - 1) / 2) * power(x, POWERS[i]) / FACTORIALS[i];
+  28:main.c        ****     }
+  29:main.c        ****     if (halfPeriodsNum % 2 == 1)
+  30:main.c        ****     {
+  31:main.c        ****         toReturn *= -1;
+  32:main.c        ****     }
+  33:main.c        ****     return toReturn;
+  34:main.c        **** }
+  35:main.c        **** 
+  36:main.c        ****  //helper functions
+  37:main.c        **** int power(int x, double a)
+  38:main.c        **** {
+  32              		.loc 1 38 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 16
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              	.LVL0:
+  37 0000 70B5     		push	{r4, r5, r6, lr}
+  38              		.cfi_def_cfa_offset 16
+  39              		.cfi_offset 4, -16
+  40              		.cfi_offset 5, -12
+  41              		.cfi_offset 6, -8
+  42              		.cfi_offset 14, -4
+  43 0002 84B0     		sub	sp, sp, #16
+  44              		.cfi_def_cfa_offset 32
+  45 0004 0292     		str	r2, [sp, #8]
+  46 0006 0393     		str	r3, [sp, #12]
+  39:main.c        ****     double toReturn = x;
+  47              		.loc 1 39 0
+  48 0008 FFF7FEFF 		bl	__aeabi_i2d
+  49              	.LVL1:
+  50 000c 0090     		str	r0, [sp]
+  51 000e 0191     		str	r1, [sp, #4]
+  52              	.LVL2:
+  53 0010 0400     		movs	r4, r0
+  54 0012 0D00     		movs	r5, r1
+  55              	.LBB2:
+  40:main.c        ****     for (int i = 0; i < a; i++)
+  56              		.loc 1 40 0
+  57 0014 0026     		movs	r6, #0
+  58 0016 08E0     		b	.L2
+  59              	.LVL3:
+  60              	.L3:
+  41:main.c        ****     {
+  42:main.c        ****         toReturn *= x;
+  61              		.loc 1 42 0 discriminator 3
+  62 0018 009A     		ldr	r2, [sp]
+  63 001a 019B     		ldr	r3, [sp, #4]
+  64 001c 2000     		movs	r0, r4
+  65 001e 2900     		movs	r1, r5
+  66 0020 FFF7FEFF 		bl	__aeabi_dmul
+  67              	.LVL4:
+  68 0024 0400     		movs	r4, r0
+  69              	.LVL5:
+  70 0026 0D00     		movs	r5, r1
+  71              	.LVL6:
+  40:main.c        ****     for (int i = 0; i < a; i++)
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 3
+
+
+  72              		.loc 1 40 0 discriminator 3
+  73 0028 0136     		adds	r6, r6, #1
+  74              	.LVL7:
+  75              	.L2:
+  40:main.c        ****     for (int i = 0; i < a; i++)
+  76              		.loc 1 40 0 is_stmt 0 discriminator 1
+  77 002a 3000     		movs	r0, r6
+  78 002c FFF7FEFF 		bl	__aeabi_i2d
+  79              	.LVL8:
+  80 0030 029A     		ldr	r2, [sp, #8]
+  81 0032 039B     		ldr	r3, [sp, #12]
+  82 0034 FFF7FEFF 		bl	__aeabi_dcmplt
+  83              	.LVL9:
+  84 0038 0028     		cmp	r0, #0
+  85 003a EDD1     		bne	.L3
+  86              	.LBE2:
+  43:main.c        ****     }
+  44:main.c        ****     return toReturn;
+  87              		.loc 1 44 0 is_stmt 1
+  88 003c 2000     		movs	r0, r4
+  89 003e 2900     		movs	r1, r5
+  90 0040 FFF7FEFF 		bl	__aeabi_d2iz
+  91              	.LVL10:
+  45:main.c        **** }
+  92              		.loc 1 45 0
+  93 0044 04B0     		add	sp, sp, #16
+  94              		@ sp needed
+  95              	.LVL11:
+  96              	.LVL12:
+  97 0046 70BD     		pop	{r4, r5, r6, pc}
+  98              		.cfi_endproc
+  99              	.LFE36:
+ 100              		.size	power, .-power
+ 101              		.global	__aeabi_ddiv
+ 102              		.global	__aeabi_dsub
+ 103              		.global	__aeabi_dadd
+ 104              		.section	.text.sin,"ax",%progbits
+ 105              		.align	2
+ 106              		.global	sin
+ 107              		.code	16
+ 108              		.thumb_func
+ 109              		.type	sin, %function
+ 110              	sin:
+ 111              	.LFB35:
+  21:main.c        ****     int halfPeriodsNum = x / PI;
+ 112              		.loc 1 21 0
+ 113              		.cfi_startproc
+ 114              		@ args = 0, pretend = 0, frame = 16
+ 115              		@ frame_needed = 0, uses_anonymous_args = 0
+ 116              	.LVL13:
+ 117 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 118              		.cfi_def_cfa_offset 20
+ 119              		.cfi_offset 4, -20
+ 120              		.cfi_offset 5, -16
+ 121              		.cfi_offset 6, -12
+ 122              		.cfi_offset 7, -8
+ 123              		.cfi_offset 14, -4
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 4
+
+
+ 124 0002 4F46     		mov	r7, r9
+ 125 0004 80B4     		push	{r7}
+ 126              		.cfi_def_cfa_offset 24
+ 127              		.cfi_offset 9, -24
+ 128 0006 84B0     		sub	sp, sp, #16
+ 129              		.cfi_def_cfa_offset 40
+ 130 0008 0600     		movs	r6, r0
+ 131 000a 0F00     		movs	r7, r1
+  22:main.c        ****     x = x - halfPeriodsNum * PI;
+ 132              		.loc 1 22 0
+ 133 000c 2B4B     		ldr	r3, .L8
+ 134 000e 1C68     		ldr	r4, [r3]
+ 135 0010 5D68     		ldr	r5, [r3, #4]
+ 136 0012 2200     		movs	r2, r4
+ 137 0014 2B00     		movs	r3, r5
+ 138 0016 FFF7FEFF 		bl	__aeabi_ddiv
+ 139              	.LVL14:
+ 140 001a FFF7FEFF 		bl	__aeabi_d2iz
+ 141              	.LVL15:
+ 142 001e 8146     		mov	r9, r0
+ 143              	.LVL16:
+  23:main.c        ****     double toReturn = 0;
+ 144              		.loc 1 23 0
+ 145 0020 FFF7FEFF 		bl	__aeabi_i2d
+ 146              	.LVL17:
+ 147 0024 2200     		movs	r2, r4
+ 148 0026 2B00     		movs	r3, r5
+ 149 0028 FFF7FEFF 		bl	__aeabi_dmul
+ 150              	.LVL18:
+ 151 002c 0200     		movs	r2, r0
+ 152 002e 0B00     		movs	r3, r1
+ 153 0030 3000     		movs	r0, r6
+ 154 0032 3900     		movs	r1, r7
+ 155 0034 FFF7FEFF 		bl	__aeabi_dsub
+ 156              	.LVL19:
+ 157 0038 0290     		str	r0, [sp, #8]
+ 158 003a 0391     		str	r1, [sp, #12]
+ 159              	.LVL20:
+ 160              	.LBB3:
+  25:main.c        ****     {
+ 161              		.loc 1 25 0
+ 162 003c 0025     		movs	r5, #0
+ 163              	.LBE3:
+  24:main.c        ****     for (int i = 0; i < N; i++)
+ 164              		.loc 1 24 0
+ 165 003e 0023     		movs	r3, #0
+ 166 0040 0193     		str	r3, [sp, #4]
+ 167 0042 0024     		movs	r4, #0
+ 168              	.LBB5:
+  25:main.c        ****     {
+ 169              		.loc 1 25 0
+ 170 0044 23E0     		b	.L5
+ 171              	.LVL21:
+ 172              	.L6:
+ 173              	.LBB4:
+  27:main.c        ****     }
+ 174              		.loc 1 27 0 discriminator 3
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 5
+
+
+ 175 0046 691E     		subs	r1, r5, #1
+ 176 0048 CB0F     		lsrs	r3, r1, #31
+ 177 004a 5918     		adds	r1, r3, r1
+ 178 004c 4910     		asrs	r1, r1, #1
+ 179 004e 0120     		movs	r0, #1
+ 180 0050 4042     		rsbs	r0, r0, #0
+ 181 0052 FFF7FEFF 		bl	power
+ 182              	.LVL22:
+ 183 0056 0700     		movs	r7, r0
+ 184 0058 EB00     		lsls	r3, r5, #3
+ 185 005a 194E     		ldr	r6, .L8+4
+ 186 005c F618     		adds	r6, r6, r3
+ 187 005e 3268     		ldr	r2, [r6]
+ 188 0060 7368     		ldr	r3, [r6, #4]
+ 189 0062 0298     		ldr	r0, [sp, #8]
+ 190 0064 0399     		ldr	r1, [sp, #12]
+ 191 0066 FFF7FEFF 		bl	power
+ 192              	.LVL23:
+ 193 006a 7843     		muls	r0, r7
+ 194 006c 776A     		ldr	r7, [r6, #36]
+ 195 006e 366A     		ldr	r6, [r6, #32]
+ 196 0070 FFF7FEFF 		bl	__aeabi_i2d
+ 197              	.LVL24:
+ 198 0074 3200     		movs	r2, r6
+ 199 0076 3B00     		movs	r3, r7
+ 200 0078 FFF7FEFF 		bl	__aeabi_ddiv
+ 201              	.LVL25:
+ 202 007c 0200     		movs	r2, r0
+ 203 007e 0B00     		movs	r3, r1
+ 204 0080 0198     		ldr	r0, [sp, #4]
+ 205 0082 2100     		movs	r1, r4
+ 206 0084 FFF7FEFF 		bl	__aeabi_dadd
+ 207              	.LVL26:
+ 208 0088 0190     		str	r0, [sp, #4]
+ 209              	.LVL27:
+ 210 008a 0C00     		movs	r4, r1
+ 211              	.LVL28:
+ 212              	.LBE4:
+  25:main.c        ****     {
+ 213              		.loc 1 25 0 discriminator 3
+ 214 008c 0135     		adds	r5, r5, #1
+ 215              	.LVL29:
+ 216              	.L5:
+  25:main.c        ****     {
+ 217              		.loc 1 25 0 is_stmt 0 discriminator 1
+ 218 008e 0B4B     		ldr	r3, .L8
+ 219 0090 9B68     		ldr	r3, [r3, #8]
+ 220 0092 9D42     		cmp	r5, r3
+ 221 0094 D7DB     		blt	.L6
+ 222              	.LBE5:
+  29:main.c        ****     {
+ 223              		.loc 1 29 0 is_stmt 1
+ 224 0096 4B46     		mov	r3, r9
+ 225 0098 D90F     		lsrs	r1, r3, #31
+ 226 009a 5A18     		adds	r2, r3, r1
+ 227 009c 0123     		movs	r3, #1
+ 228 009e 1340     		ands	r3, r2
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 6
+
+
+ 229 00a0 5B1A     		subs	r3, r3, r1
+ 230 00a2 012B     		cmp	r3, #1
+ 231 00a4 03D1     		bne	.L7
+  31:main.c        ****     }
+ 232              		.loc 1 31 0
+ 233 00a6 8023     		movs	r3, #128
+ 234 00a8 1B06     		lsls	r3, r3, #24
+ 235 00aa 9C46     		mov	ip, r3
+ 236 00ac 6444     		add	r4, r4, ip
+ 237              	.LVL30:
+ 238              	.L7:
+  34:main.c        **** 
+ 239              		.loc 1 34 0
+ 240 00ae 0198     		ldr	r0, [sp, #4]
+ 241 00b0 2100     		movs	r1, r4
+ 242 00b2 04B0     		add	sp, sp, #16
+ 243              		@ sp needed
+ 244              	.LVL31:
+ 245              	.LVL32:
+ 246              	.LVL33:
+ 247 00b4 04BC     		pop	{r2}
+ 248 00b6 9146     		mov	r9, r2
+ 249 00b8 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 250              	.L9:
+ 251 00ba C046     		.align	2
+ 252              	.L8:
+ 253 00bc 00000000 		.word	.LANCHOR0
+ 254 00c0 00000000 		.word	.LANCHOR1
+ 255              		.cfi_endproc
+ 256              	.LFE35:
+ 257              		.size	sin, .-sin
+ 258              		.section	.text.main,"ax",%progbits
+ 259              		.align	2
+ 260              		.global	main
+ 261              		.code	16
+ 262              		.thumb_func
+ 263              		.type	main, %function
+ 264              	main:
+ 265              	.LFB37:
+  46:main.c        **** 
+  47:main.c        **** double Sine_Lookup[64] = {0x19,0x1b,0x1e,0x20,0x23,0x25,0x27,0x29, 0x2b,0x2c,0x2e,0x2f,0x30,0x31,0x
+  48:main.c        **** static const uint16_t sinetable[256] = {31, 32, 33, 33, 34, 35, 36, 36, 37, 38, 39, 39, 40, 41, 41,
+  49:main.c        **** 
+  50:main.c        **** 
+  51:main.c        **** static const char LETTERS[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 
+  52:main.c        ****     'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+  53:main.c        **** 
+  54:main.c        **** int main(void)
+  55:main.c        **** {
+ 266              		.loc 1 55 0
+ 267              		.cfi_startproc
+ 268              		@ args = 0, pretend = 0, frame = 0
+ 269              		@ frame_needed = 0, uses_anonymous_args = 0
+ 270 0000 70B5     		push	{r4, r5, r6, lr}
+ 271              		.cfi_def_cfa_offset 16
+ 272              		.cfi_offset 4, -16
+ 273              		.cfi_offset 5, -12
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 7
+
+
+ 274              		.cfi_offset 6, -8
+ 275              		.cfi_offset 14, -4
+  56:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 276              		.loc 1 56 0
+ 277              		.syntax divided
+ 278              	@ 56 "main.c" 1
+ 279 0002 62B6     		CPSIE   i
+ 280              	@ 0 "" 2
+  57:main.c        ****     
+  58:main.c        ****     //char msg[5] = {'a', 'b', 'c', 'd', 'e', 'f'};
+  59:main.c        ****     
+  60:main.c        ****     //int numbers[5];
+  61:main.c        ****     //for (int i = 0; i < 5; i+=1) {
+  62:main.c        ****       //  for (int j = 0; j < 26; j+=1) {
+  63:main.c        ****         ///    if (LETTERS[j] == msg[i]) {
+  64:main.c        ****            ///     numbers[i] = j;
+  65:main.c        ****               //  break;
+  66:main.c        ****     //        }
+  67:main.c        ****       //  }
+  68:main.c        ****     //}
+  69:main.c        ****     
+  70:main.c        ****    // int coded_msg[25];
+  71:main.c        ****     //for (int i = 0; i < 5; i+=1) {
+  72:main.c        ****      //   for (int j = 0; j < 5; j+=1) {
+  73:main.c        ****        //     coded_msg[(i + 1) * j] = LETTERS[j];
+  74:main.c        ****     //    } 
+  75:main.c        ****     ///}
+  76:main.c        ****     
+  77:main.c        ****     int codedMsg[25] = {0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0};
+  78:main.c        ****     
+  79:main.c        ****     PWM_1_Start();
+ 281              		.loc 1 79 0
+ 282              		.thumb
+ 283              		.syntax unified
+ 284 0004 FFF7FEFF 		bl	PWM_1_Start
+ 285              	.LVL34:
+  80:main.c        ****     int k = -1;
+  81:main.c        ****     int readRate = -1;
+ 286              		.loc 1 81 0
+ 287 0008 0125     		movs	r5, #1
+ 288 000a 6D42     		rsbs	r5, r5, #0
+ 289              	.LVL35:
+ 290              	.L14:
+  82:main.c        ****     double modulationCoeff = 0.5;
+  83:main.c        ****     for (;;)
+  84:main.c        ****     {
+  85:main.c        ****         readRate += 1;
+ 291              		.loc 1 85 0
+ 292 000c 0135     		adds	r5, r5, #1
+ 293              	.LVL36:
+  86:main.c        ****         if(readRate == 4) {
+ 294              		.loc 1 86 0
+ 295 000e 042D     		cmp	r5, #4
+ 296 0010 00D1     		bne	.L11
+  87:main.c        ****             readRate = -1;
+ 297              		.loc 1 87 0
+ 298 0012 053D     		subs	r5, r5, #5
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 8
+
+
+ 299              	.LVL37:
+ 300              	.L11:
+ 301              	.LBB6:
+  88:main.c        ****             k += 1;
+  89:main.c        ****         } 
+  90:main.c        ****         if (codedMsg[k % 15] == 1) {
+  91:main.c        ****             modulationCoeff = 0.0;
+  92:main.c        ****         }
+  93:main.c        ****         else {
+  94:main.c        ****             modulationCoeff = 0.5;
+  95:main.c        ****         }
+  96:main.c        ****         for(int i = 0; i < 256 * 2; i+= 1 ) {
+ 302              		.loc 1 96 0
+ 303 0014 0024     		movs	r4, #0
+ 304              	.LBE6:
+ 305 0016 0AE0     		b	.L12
+ 306              	.LVL38:
+ 307              	.L13:
+ 308              	.LBB8:
+ 309              	.LBB7:
+  97:main.c        ****             double value = sinetable[i / 2];
+ 310              		.loc 1 97 0 discriminator 3
+ 311 0018 E30F     		lsrs	r3, r4, #31
+ 312 001a 1B19     		adds	r3, r3, r4
+ 313 001c 5B10     		asrs	r3, r3, #1
+ 314 001e 5B00     		lsls	r3, r3, #1
+ 315 0020 054A     		ldr	r2, .L16
+ 316 0022 D318     		adds	r3, r2, r3
+ 317 0024 4022     		movs	r2, #64
+ 318 0026 985A     		ldrh	r0, [r3, r2]
+ 319              	.LVL39:
+  98:main.c        ****             //double value = (sinetable[i / 2] - 29) * (modulationCoeff + codedMsg[k % 15]) + 29;
+  99:main.c        ****             PWM_1_WriteCompare(value);
+ 320              		.loc 1 99 0 discriminator 3
+ 321 0028 FFF7FEFF 		bl	PWM_1_WriteCompare
+ 322              	.LVL40:
+ 323              	.LBE7:
+  96:main.c        ****             double value = sinetable[i / 2];
+ 324              		.loc 1 96 0 discriminator 3
+ 325 002c 0134     		adds	r4, r4, #1
+ 326              	.LVL41:
+ 327              	.L12:
+  96:main.c        ****             double value = sinetable[i / 2];
+ 328              		.loc 1 96 0 is_stmt 0 discriminator 1
+ 329 002e 034B     		ldr	r3, .L16+4
+ 330 0030 9C42     		cmp	r4, r3
+ 331 0032 F1DD     		ble	.L13
+ 332 0034 EAE7     		b	.L14
+ 333              	.L17:
+ 334 0036 C046     		.align	2
+ 335              	.L16:
+ 336 0038 00000000 		.word	.LANCHOR1
+ 337 003c FF010000 		.word	511
+ 338              	.LBE8:
+ 339              		.cfi_endproc
+ 340              	.LFE37:
+ 341              		.size	main, .-main
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 9
+
+
+ 342              		.global	Sine_Lookup
+ 343              		.global	N
+ 344              		.global	PI
+ 345              		.section	.rodata
+ 346              		.align	3
+ 347              		.set	.LANCHOR1,. + 0
+ 348              		.type	POWERS, %object
+ 349              		.size	POWERS, 32
+ 350              	POWERS:
+ 351 0000 00000000 		.word	0
+ 352 0004 0000F03F 		.word	1072693248
+ 353 0008 00000000 		.word	0
+ 354 000c 00000840 		.word	1074266112
+ 355 0010 00000000 		.word	0
+ 356 0014 00001440 		.word	1075052544
+ 357 0018 00000000 		.word	0
+ 358 001c 00001C40 		.word	1075576832
+ 359              		.type	FACTORIALS, %object
+ 360              		.size	FACTORIALS, 32
+ 361              	FACTORIALS:
+ 362 0020 00000000 		.word	0
+ 363 0024 0000F03F 		.word	1072693248
+ 364 0028 00000000 		.word	0
+ 365 002c 00001840 		.word	1075314688
+ 366 0030 00000000 		.word	0
+ 367 0034 00005E40 		.word	1079902208
+ 368 0038 00000000 		.word	0
+ 369 003c 00B0B340 		.word	1085517824
+ 370              		.type	sinetable, %object
+ 371              		.size	sinetable, 512
+ 372              	sinetable:
+ 373 0040 1F00     		.short	31
+ 374 0042 2000     		.short	32
+ 375 0044 2100     		.short	33
+ 376 0046 2100     		.short	33
+ 377 0048 2200     		.short	34
+ 378 004a 2300     		.short	35
+ 379 004c 2400     		.short	36
+ 380 004e 2400     		.short	36
+ 381 0050 2500     		.short	37
+ 382 0052 2600     		.short	38
+ 383 0054 2700     		.short	39
+ 384 0056 2700     		.short	39
+ 385 0058 2800     		.short	40
+ 386 005a 2900     		.short	41
+ 387 005c 2900     		.short	41
+ 388 005e 2A00     		.short	42
+ 389 0060 2B00     		.short	43
+ 390 0062 2B00     		.short	43
+ 391 0064 2C00     		.short	44
+ 392 0066 2D00     		.short	45
+ 393 0068 2D00     		.short	45
+ 394 006a 2E00     		.short	46
+ 395 006c 2E00     		.short	46
+ 396 006e 2F00     		.short	47
+ 397 0070 3000     		.short	48
+ 398 0072 3000     		.short	48
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 10
+
+
+ 399 0074 3100     		.short	49
+ 400 0076 3100     		.short	49
+ 401 0078 3200     		.short	50
+ 402 007a 3200     		.short	50
+ 403 007c 3300     		.short	51
+ 404 007e 3300     		.short	51
+ 405 0080 3300     		.short	51
+ 406 0082 3400     		.short	52
+ 407 0084 3400     		.short	52
+ 408 0086 3500     		.short	53
+ 409 0088 3500     		.short	53
+ 410 008a 3500     		.short	53
+ 411 008c 3600     		.short	54
+ 412 008e 3600     		.short	54
+ 413 0090 3600     		.short	54
+ 414 0092 3700     		.short	55
+ 415 0094 3700     		.short	55
+ 416 0096 3700     		.short	55
+ 417 0098 3700     		.short	55
+ 418 009a 3800     		.short	56
+ 419 009c 3800     		.short	56
+ 420 009e 3800     		.short	56
+ 421 00a0 3800     		.short	56
+ 422 00a2 3800     		.short	56
+ 423 00a4 3800     		.short	56
+ 424 00a6 3900     		.short	57
+ 425 00a8 3900     		.short	57
+ 426 00aa 3900     		.short	57
+ 427 00ac 3900     		.short	57
+ 428 00ae 3900     		.short	57
+ 429 00b0 3900     		.short	57
+ 430 00b2 3900     		.short	57
+ 431 00b4 3900     		.short	57
+ 432 00b6 3900     		.short	57
+ 433 00b8 3900     		.short	57
+ 434 00ba 3900     		.short	57
+ 435 00bc 3900     		.short	57
+ 436 00be 3A00     		.short	58
+ 437 00c0 3A00     		.short	58
+ 438 00c2 3A00     		.short	58
+ 439 00c4 3900     		.short	57
+ 440 00c6 3900     		.short	57
+ 441 00c8 3900     		.short	57
+ 442 00ca 3900     		.short	57
+ 443 00cc 3900     		.short	57
+ 444 00ce 3900     		.short	57
+ 445 00d0 3900     		.short	57
+ 446 00d2 3900     		.short	57
+ 447 00d4 3900     		.short	57
+ 448 00d6 3900     		.short	57
+ 449 00d8 3900     		.short	57
+ 450 00da 3900     		.short	57
+ 451 00dc 3800     		.short	56
+ 452 00de 3800     		.short	56
+ 453 00e0 3800     		.short	56
+ 454 00e2 3800     		.short	56
+ 455 00e4 3800     		.short	56
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 11
+
+
+ 456 00e6 3800     		.short	56
+ 457 00e8 3700     		.short	55
+ 458 00ea 3700     		.short	55
+ 459 00ec 3700     		.short	55
+ 460 00ee 3700     		.short	55
+ 461 00f0 3600     		.short	54
+ 462 00f2 3600     		.short	54
+ 463 00f4 3600     		.short	54
+ 464 00f6 3500     		.short	53
+ 465 00f8 3500     		.short	53
+ 466 00fa 3500     		.short	53
+ 467 00fc 3400     		.short	52
+ 468 00fe 3400     		.short	52
+ 469 0100 3300     		.short	51
+ 470 0102 3300     		.short	51
+ 471 0104 3300     		.short	51
+ 472 0106 3200     		.short	50
+ 473 0108 3200     		.short	50
+ 474 010a 3100     		.short	49
+ 475 010c 3100     		.short	49
+ 476 010e 3000     		.short	48
+ 477 0110 3000     		.short	48
+ 478 0112 2F00     		.short	47
+ 479 0114 2E00     		.short	46
+ 480 0116 2E00     		.short	46
+ 481 0118 2D00     		.short	45
+ 482 011a 2D00     		.short	45
+ 483 011c 2C00     		.short	44
+ 484 011e 2B00     		.short	43
+ 485 0120 2B00     		.short	43
+ 486 0122 2A00     		.short	42
+ 487 0124 2900     		.short	41
+ 488 0126 2900     		.short	41
+ 489 0128 2800     		.short	40
+ 490 012a 2700     		.short	39
+ 491 012c 2700     		.short	39
+ 492 012e 2600     		.short	38
+ 493 0130 2500     		.short	37
+ 494 0132 2400     		.short	36
+ 495 0134 2400     		.short	36
+ 496 0136 2300     		.short	35
+ 497 0138 2200     		.short	34
+ 498 013a 2100     		.short	33
+ 499 013c 2100     		.short	33
+ 500 013e 2000     		.short	32
+ 501 0140 1F00     		.short	31
+ 502 0142 1E00     		.short	30
+ 503 0144 1D00     		.short	29
+ 504 0146 1D00     		.short	29
+ 505 0148 1C00     		.short	28
+ 506 014a 1B00     		.short	27
+ 507 014c 1A00     		.short	26
+ 508 014e 1A00     		.short	26
+ 509 0150 1900     		.short	25
+ 510 0152 1800     		.short	24
+ 511 0154 1700     		.short	23
+ 512 0156 1700     		.short	23
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 12
+
+
+ 513 0158 1600     		.short	22
+ 514 015a 1500     		.short	21
+ 515 015c 1500     		.short	21
+ 516 015e 1400     		.short	20
+ 517 0160 1300     		.short	19
+ 518 0162 1300     		.short	19
+ 519 0164 1200     		.short	18
+ 520 0166 1100     		.short	17
+ 521 0168 1100     		.short	17
+ 522 016a 1000     		.short	16
+ 523 016c 1000     		.short	16
+ 524 016e 0F00     		.short	15
+ 525 0170 0E00     		.short	14
+ 526 0172 0E00     		.short	14
+ 527 0174 0D00     		.short	13
+ 528 0176 0D00     		.short	13
+ 529 0178 0C00     		.short	12
+ 530 017a 0C00     		.short	12
+ 531 017c 0B00     		.short	11
+ 532 017e 0B00     		.short	11
+ 533 0180 0B00     		.short	11
+ 534 0182 0A00     		.short	10
+ 535 0184 0A00     		.short	10
+ 536 0186 0900     		.short	9
+ 537 0188 0900     		.short	9
+ 538 018a 0900     		.short	9
+ 539 018c 0800     		.short	8
+ 540 018e 0800     		.short	8
+ 541 0190 0800     		.short	8
+ 542 0192 0700     		.short	7
+ 543 0194 0700     		.short	7
+ 544 0196 0700     		.short	7
+ 545 0198 0700     		.short	7
+ 546 019a 0600     		.short	6
+ 547 019c 0600     		.short	6
+ 548 019e 0600     		.short	6
+ 549 01a0 0600     		.short	6
+ 550 01a2 0600     		.short	6
+ 551 01a4 0600     		.short	6
+ 552 01a6 0500     		.short	5
+ 553 01a8 0500     		.short	5
+ 554 01aa 0500     		.short	5
+ 555 01ac 0500     		.short	5
+ 556 01ae 0500     		.short	5
+ 557 01b0 0500     		.short	5
+ 558 01b2 0500     		.short	5
+ 559 01b4 0500     		.short	5
+ 560 01b6 0500     		.short	5
+ 561 01b8 0500     		.short	5
+ 562 01ba 0500     		.short	5
+ 563 01bc 0500     		.short	5
+ 564 01be 0400     		.short	4
+ 565 01c0 0400     		.short	4
+ 566 01c2 0400     		.short	4
+ 567 01c4 0500     		.short	5
+ 568 01c6 0500     		.short	5
+ 569 01c8 0500     		.short	5
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 13
+
+
+ 570 01ca 0500     		.short	5
+ 571 01cc 0500     		.short	5
+ 572 01ce 0500     		.short	5
+ 573 01d0 0500     		.short	5
+ 574 01d2 0500     		.short	5
+ 575 01d4 0500     		.short	5
+ 576 01d6 0500     		.short	5
+ 577 01d8 0500     		.short	5
+ 578 01da 0500     		.short	5
+ 579 01dc 0600     		.short	6
+ 580 01de 0600     		.short	6
+ 581 01e0 0600     		.short	6
+ 582 01e2 0600     		.short	6
+ 583 01e4 0600     		.short	6
+ 584 01e6 0600     		.short	6
+ 585 01e8 0700     		.short	7
+ 586 01ea 0700     		.short	7
+ 587 01ec 0700     		.short	7
+ 588 01ee 0700     		.short	7
+ 589 01f0 0800     		.short	8
+ 590 01f2 0800     		.short	8
+ 591 01f4 0800     		.short	8
+ 592 01f6 0900     		.short	9
+ 593 01f8 0900     		.short	9
+ 594 01fa 0900     		.short	9
+ 595 01fc 0A00     		.short	10
+ 596 01fe 0A00     		.short	10
+ 597 0200 0B00     		.short	11
+ 598 0202 0B00     		.short	11
+ 599 0204 0B00     		.short	11
+ 600 0206 0C00     		.short	12
+ 601 0208 0C00     		.short	12
+ 602 020a 0D00     		.short	13
+ 603 020c 0D00     		.short	13
+ 604 020e 0E00     		.short	14
+ 605 0210 0E00     		.short	14
+ 606 0212 0F00     		.short	15
+ 607 0214 1000     		.short	16
+ 608 0216 1000     		.short	16
+ 609 0218 1100     		.short	17
+ 610 021a 1100     		.short	17
+ 611 021c 1200     		.short	18
+ 612 021e 1300     		.short	19
+ 613 0220 1300     		.short	19
+ 614 0222 1400     		.short	20
+ 615 0224 1500     		.short	21
+ 616 0226 1500     		.short	21
+ 617 0228 1600     		.short	22
+ 618 022a 1700     		.short	23
+ 619 022c 1700     		.short	23
+ 620 022e 1800     		.short	24
+ 621 0230 1900     		.short	25
+ 622 0232 1A00     		.short	26
+ 623 0234 1A00     		.short	26
+ 624 0236 1B00     		.short	27
+ 625 0238 1C00     		.short	28
+ 626 023a 1D00     		.short	29
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 14
+
+
+ 627 023c 1D00     		.short	29
+ 628 023e 1E00     		.short	30
+ 629              		.data
+ 630              		.align	3
+ 631              		.set	.LANCHOR0,. + 0
+ 632              		.type	PI, %object
+ 633              		.size	PI, 8
+ 634              	PI:
+ 635 0000 1F85EB51 		.word	1374389535
+ 636 0004 B81E0940 		.word	1074339512
+ 637              		.type	N, %object
+ 638              		.size	N, 4
+ 639              	N:
+ 640 0008 04000000 		.word	4
+ 641 000c 00000000 		.space	4
+ 642              		.type	Sine_Lookup, %object
+ 643              		.size	Sine_Lookup, 512
+ 644              	Sine_Lookup:
+ 645 0010 00000000 		.word	0
+ 646 0014 00003940 		.word	1077477376
+ 647 0018 00000000 		.word	0
+ 648 001c 00003B40 		.word	1077608448
+ 649 0020 00000000 		.word	0
+ 650 0024 00003E40 		.word	1077805056
+ 651 0028 00000000 		.word	0
+ 652 002c 00004040 		.word	1077936128
+ 653 0030 00000000 		.word	0
+ 654 0034 00804140 		.word	1078034432
+ 655 0038 00000000 		.word	0
+ 656 003c 00804240 		.word	1078099968
+ 657 0040 00000000 		.word	0
+ 658 0044 00804340 		.word	1078165504
+ 659 0048 00000000 		.word	0
+ 660 004c 00804440 		.word	1078231040
+ 661 0050 00000000 		.word	0
+ 662 0054 00804540 		.word	1078296576
+ 663 0058 00000000 		.word	0
+ 664 005c 00004640 		.word	1078329344
+ 665 0060 00000000 		.word	0
+ 666 0064 00004740 		.word	1078394880
+ 667 0068 00000000 		.word	0
+ 668 006c 00804740 		.word	1078427648
+ 669 0070 00000000 		.word	0
+ 670 0074 00004840 		.word	1078460416
+ 671 0078 00000000 		.word	0
+ 672 007c 00804840 		.word	1078493184
+ 673 0080 00000000 		.word	0
+ 674 0084 00004940 		.word	1078525952
+ 675 0088 00000000 		.word	0
+ 676 008c 00004940 		.word	1078525952
+ 677 0090 00000000 		.word	0
+ 678 0094 00004940 		.word	1078525952
+ 679 0098 00000000 		.word	0
+ 680 009c 00004940 		.word	1078525952
+ 681 00a0 00000000 		.word	0
+ 682 00a4 00004940 		.word	1078525952
+ 683 00a8 00000000 		.word	0
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 15
+
+
+ 684 00ac 00804840 		.word	1078493184
+ 685 00b0 00000000 		.word	0
+ 686 00b4 00004840 		.word	1078460416
+ 687 00b8 00000000 		.word	0
+ 688 00bc 00804740 		.word	1078427648
+ 689 00c0 00000000 		.word	0
+ 690 00c4 00004740 		.word	1078394880
+ 691 00c8 00000000 		.word	0
+ 692 00cc 00004640 		.word	1078329344
+ 693 00d0 00000000 		.word	0
+ 694 00d4 00804540 		.word	1078296576
+ 695 00d8 00000000 		.word	0
+ 696 00dc 00804440 		.word	1078231040
+ 697 00e0 00000000 		.word	0
+ 698 00e4 00804340 		.word	1078165504
+ 699 00e8 00000000 		.word	0
+ 700 00ec 00804240 		.word	1078099968
+ 701 00f0 00000000 		.word	0
+ 702 00f4 00804140 		.word	1078034432
+ 703 00f8 00000000 		.word	0
+ 704 00fc 00004040 		.word	1077936128
+ 705 0100 00000000 		.word	0
+ 706 0104 00003E40 		.word	1077805056
+ 707 0108 00000000 		.word	0
+ 708 010c 00003B40 		.word	1077608448
+ 709 0110 00000000 		.word	0
+ 710 0114 00003940 		.word	1077477376
+ 711 0118 00000000 		.word	0
+ 712 011c 00003740 		.word	1077346304
+ 713 0120 00000000 		.word	0
+ 714 0124 00003440 		.word	1077149696
+ 715 0128 00000000 		.word	0
+ 716 012c 00003240 		.word	1077018624
+ 717 0130 00000000 		.word	0
+ 718 0134 00002E40 		.word	1076756480
+ 719 0138 00000000 		.word	0
+ 720 013c 00002A40 		.word	1076494336
+ 721 0140 00000000 		.word	0
+ 722 0144 00002640 		.word	1076232192
+ 723 0148 00000000 		.word	0
+ 724 014c 00002240 		.word	1075970048
+ 725 0150 00000000 		.word	0
+ 726 0154 00001C40 		.word	1075576832
+ 727 0158 00000000 		.word	0
+ 728 015c 00001840 		.word	1075314688
+ 729 0160 00000000 		.word	0
+ 730 0164 00001040 		.word	1074790400
+ 731 0168 00000000 		.word	0
+ 732 016c 00000840 		.word	1074266112
+ 733 0170 00000000 		.word	0
+ 734 0174 00000040 		.word	1073741824
+ 735 0178 00000000 		.word	0
+ 736 017c 0000F03F 		.word	1072693248
+ 737 0180 00000000 		.word	0
+ 738 0184 00000000 		.word	0
+ 739 0188 00000000 		.word	0
+ 740 018c 00000000 		.word	0
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 16
+
+
+ 741 0190 00000000 		.word	0
+ 742 0194 00000000 		.word	0
+ 743 0198 00000000 		.word	0
+ 744 019c 00000000 		.word	0
+ 745 01a0 00000000 		.word	0
+ 746 01a4 00000000 		.word	0
+ 747 01a8 00000000 		.word	0
+ 748 01ac 0000F03F 		.word	1072693248
+ 749 01b0 00000000 		.word	0
+ 750 01b4 00000040 		.word	1073741824
+ 751 01b8 00000000 		.word	0
+ 752 01bc 00000840 		.word	1074266112
+ 753 01c0 00000000 		.word	0
+ 754 01c4 00001040 		.word	1074790400
+ 755 01c8 00000000 		.word	0
+ 756 01cc 00001840 		.word	1075314688
+ 757 01d0 00000000 		.word	0
+ 758 01d4 00001C40 		.word	1075576832
+ 759 01d8 00000000 		.word	0
+ 760 01dc 00002240 		.word	1075970048
+ 761 01e0 00000000 		.word	0
+ 762 01e4 00002640 		.word	1076232192
+ 763 01e8 00000000 		.word	0
+ 764 01ec 00002A40 		.word	1076494336
+ 765 01f0 00000000 		.word	0
+ 766 01f4 00002E40 		.word	1076756480
+ 767 01f8 00000000 		.word	0
+ 768 01fc 00003240 		.word	1077018624
+ 769 0200 00000000 		.word	0
+ 770 0204 00003440 		.word	1077149696
+ 771 0208 00000000 		.word	0
+ 772 020c 00003740 		.word	1077346304
+ 773              		.text
+ 774              	.Letext0:
+ 775              		.file 2 "f:\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\mac
+ 776              		.file 3 "f:\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\include\\sys
+ 777              		.file 4 "Generated_Source\\PSoC4/PWM_1.h"
+ 778              		.section	.debug_info,"",%progbits
+ 779              	.Ldebug_info0:
+ 780 0000 7C030000 		.4byte	0x37c
+ 781 0004 0400     		.2byte	0x4
+ 782 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 783 000a 04       		.byte	0x4
+ 784 000b 01       		.uleb128 0x1
+ 785 000c C5000000 		.4byte	.LASF29
+ 786 0010 0C       		.byte	0xc
+ 787 0011 A5010000 		.4byte	.LASF30
+ 788 0015 53010000 		.4byte	.LASF31
+ 789 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 790 001d 00000000 		.4byte	0
+ 791 0021 00000000 		.4byte	.Ldebug_line0
+ 792 0025 02       		.uleb128 0x2
+ 793 0026 08       		.byte	0x8
+ 794 0027 04       		.byte	0x4
+ 795 0028 70000000 		.4byte	.LASF0
+ 796 002c 02       		.uleb128 0x2
+ 797 002d 02       		.byte	0x2
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 17
+
+
+ 798 002e 07       		.byte	0x7
+ 799 002f 5D000000 		.4byte	.LASF1
+ 800 0033 02       		.uleb128 0x2
+ 801 0034 01       		.byte	0x1
+ 802 0035 06       		.byte	0x6
+ 803 0036 E4010000 		.4byte	.LASF2
+ 804 003a 02       		.uleb128 0x2
+ 805 003b 01       		.byte	0x1
+ 806 003c 08       		.byte	0x8
+ 807 003d 31000000 		.4byte	.LASF3
+ 808 0041 02       		.uleb128 0x2
+ 809 0042 02       		.byte	0x2
+ 810 0043 05       		.byte	0x5
+ 811 0044 B1010000 		.4byte	.LASF4
+ 812 0048 03       		.uleb128 0x3
+ 813 0049 BB010000 		.4byte	.LASF10
+ 814 004d 02       		.byte	0x2
+ 815 004e 2B       		.byte	0x2b
+ 816 004f 2C000000 		.4byte	0x2c
+ 817 0053 02       		.uleb128 0x2
+ 818 0054 04       		.byte	0x4
+ 819 0055 05       		.byte	0x5
+ 820 0056 CF010000 		.4byte	.LASF5
+ 821 005a 02       		.uleb128 0x2
+ 822 005b 04       		.byte	0x4
+ 823 005c 07       		.byte	0x7
+ 824 005d 4B000000 		.4byte	.LASF6
+ 825 0061 02       		.uleb128 0x2
+ 826 0062 08       		.byte	0x8
+ 827 0063 05       		.byte	0x5
+ 828 0064 97010000 		.4byte	.LASF7
+ 829 0068 02       		.uleb128 0x2
+ 830 0069 08       		.byte	0x8
+ 831 006a 07       		.byte	0x7
+ 832 006b A4000000 		.4byte	.LASF8
+ 833 006f 04       		.uleb128 0x4
+ 834 0070 04       		.byte	0x4
+ 835 0071 05       		.byte	0x5
+ 836 0072 696E7400 		.ascii	"int\000"
+ 837 0076 02       		.uleb128 0x2
+ 838 0077 04       		.byte	0x4
+ 839 0078 07       		.byte	0x7
+ 840 0079 87000000 		.4byte	.LASF9
+ 841 007d 03       		.uleb128 0x3
+ 842 007e C6010000 		.4byte	.LASF11
+ 843 0082 03       		.byte	0x3
+ 844 0083 24       		.byte	0x24
+ 845 0084 48000000 		.4byte	0x48
+ 846 0088 02       		.uleb128 0x2
+ 847 0089 04       		.byte	0x4
+ 848 008a 04       		.byte	0x4
+ 849 008b 2B000000 		.4byte	.LASF12
+ 850 008f 02       		.uleb128 0x2
+ 851 0090 01       		.byte	0x1
+ 852 0091 08       		.byte	0x8
+ 853 0092 AC010000 		.4byte	.LASF13
+ 854 0096 02       		.uleb128 0x2
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 18
+
+
+ 855 0097 08       		.byte	0x8
+ 856 0098 04       		.byte	0x4
+ 857 0099 D8010000 		.4byte	.LASF14
+ 858 009d 02       		.uleb128 0x2
+ 859 009e 04       		.byte	0x4
+ 860 009f 07       		.byte	0x7
+ 861 00a0 7B010000 		.4byte	.LASF15
+ 862 00a4 05       		.uleb128 0x5
+ 863 00a5 8F000000 		.4byte	0x8f
+ 864 00a9 06       		.uleb128 0x6
+ 865 00aa 25000000 		.4byte	.LASF17
+ 866 00ae 01       		.byte	0x1
+ 867 00af 25       		.byte	0x25
+ 868 00b0 6F000000 		.4byte	0x6f
+ 869 00b4 00000000 		.4byte	.LFB36
+ 870 00b8 48000000 		.4byte	.LFE36-.LFB36
+ 871 00bc 01       		.uleb128 0x1
+ 872 00bd 9C       		.byte	0x9c
+ 873 00be 03010000 		.4byte	0x103
+ 874 00c2 07       		.uleb128 0x7
+ 875 00c3 7800     		.ascii	"x\000"
+ 876 00c5 01       		.byte	0x1
+ 877 00c6 25       		.byte	0x25
+ 878 00c7 6F000000 		.4byte	0x6f
+ 879 00cb 00000000 		.4byte	.LLST0
+ 880 00cf 07       		.uleb128 0x7
+ 881 00d0 6100     		.ascii	"a\000"
+ 882 00d2 01       		.byte	0x1
+ 883 00d3 25       		.byte	0x25
+ 884 00d4 25000000 		.4byte	0x25
+ 885 00d8 21000000 		.4byte	.LLST1
+ 886 00dc 08       		.uleb128 0x8
+ 887 00dd F0010000 		.4byte	.LASF16
+ 888 00e1 01       		.byte	0x1
+ 889 00e2 27       		.byte	0x27
+ 890 00e3 25000000 		.4byte	0x25
+ 891 00e7 45000000 		.4byte	.LLST2
+ 892 00eb 09       		.uleb128 0x9
+ 893 00ec 14000000 		.4byte	.LBB2
+ 894 00f0 28000000 		.4byte	.LBE2-.LBB2
+ 895 00f4 0A       		.uleb128 0xa
+ 896 00f5 6900     		.ascii	"i\000"
+ 897 00f7 01       		.byte	0x1
+ 898 00f8 28       		.byte	0x28
+ 899 00f9 6F000000 		.4byte	0x6f
+ 900 00fd 7D000000 		.4byte	.LLST3
+ 901 0101 00       		.byte	0
+ 902 0102 00       		.byte	0
+ 903 0103 0B       		.uleb128 0xb
+ 904 0104 73696E00 		.ascii	"sin\000"
+ 905 0108 01       		.byte	0x1
+ 906 0109 14       		.byte	0x14
+ 907 010a 25000000 		.4byte	0x25
+ 908 010e 00000000 		.4byte	.LFB35
+ 909 0112 C4000000 		.4byte	.LFE35-.LFB35
+ 910 0116 01       		.uleb128 0x1
+ 911 0117 9C       		.byte	0x9c
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 19
+
+
+ 912 0118 BF010000 		.4byte	0x1bf
+ 913 011c 07       		.uleb128 0x7
+ 914 011d 7800     		.ascii	"x\000"
+ 915 011f 01       		.byte	0x1
+ 916 0120 14       		.byte	0x14
+ 917 0121 25000000 		.4byte	0x25
+ 918 0125 9C000000 		.4byte	.LLST4
+ 919 0129 08       		.uleb128 0x8
+ 920 012a 0D000000 		.4byte	.LASF18
+ 921 012e 01       		.byte	0x1
+ 922 012f 16       		.byte	0x16
+ 923 0130 6F000000 		.4byte	0x6f
+ 924 0134 E0000000 		.4byte	.LLST5
+ 925 0138 08       		.uleb128 0x8
+ 926 0139 F0010000 		.4byte	.LASF16
+ 927 013d 01       		.byte	0x1
+ 928 013e 18       		.byte	0x18
+ 929 013f 25000000 		.4byte	0x25
+ 930 0143 FE000000 		.4byte	.LLST6
+ 931 0147 0C       		.uleb128 0xc
+ 932 0148 00000000 		.4byte	.Ldebug_ranges0+0
+ 933 014c 0A       		.uleb128 0xa
+ 934 014d 6900     		.ascii	"i\000"
+ 935 014f 01       		.byte	0x1
+ 936 0150 19       		.byte	0x19
+ 937 0151 6F000000 		.4byte	0x6f
+ 938 0155 5D010000 		.4byte	.LLST7
+ 939 0159 09       		.uleb128 0x9
+ 940 015a 46000000 		.4byte	.LBB4
+ 941 015e 46000000 		.4byte	.LBE4-.LBB4
+ 942 0162 0D       		.uleb128 0xd
+ 943 0163 25000000 		.4byte	.LASF17
+ 944 0167 01       		.byte	0x1
+ 945 0168 1B       		.byte	0x1b
+ 946 0169 6F000000 		.4byte	0x6f
+ 947 016d 73010000 		.4byte	0x173
+ 948 0171 0E       		.uleb128 0xe
+ 949 0172 00       		.byte	0
+ 950 0173 0F       		.uleb128 0xf
+ 951 0174 56000000 		.4byte	.LVL22
+ 952 0178 A9000000 		.4byte	0xa9
+ 953 017c 96010000 		.4byte	0x196
+ 954 0180 10       		.uleb128 0x10
+ 955 0181 01       		.uleb128 0x1
+ 956 0182 50       		.byte	0x50
+ 957 0183 02       		.uleb128 0x2
+ 958 0184 09       		.byte	0x9
+ 959 0185 FF       		.byte	0xff
+ 960 0186 10       		.uleb128 0x10
+ 961 0187 01       		.uleb128 0x1
+ 962 0188 51       		.byte	0x51
+ 963 0189 0B       		.uleb128 0xb
+ 964 018a 75       		.byte	0x75
+ 965 018b 7F       		.sleb128 -1
+ 966 018c 4F       		.byte	0x4f
+ 967 018d 25       		.byte	0x25
+ 968 018e 75       		.byte	0x75
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 20
+
+
+ 969 018f 00       		.sleb128 0
+ 970 0190 22       		.byte	0x22
+ 971 0191 31       		.byte	0x31
+ 972 0192 1C       		.byte	0x1c
+ 973 0193 31       		.byte	0x31
+ 974 0194 26       		.byte	0x26
+ 975 0195 00       		.byte	0
+ 976 0196 11       		.uleb128 0x11
+ 977 0197 6A000000 		.4byte	.LVL23
+ 978 019b A9000000 		.4byte	0xa9
+ 979 019f 10       		.uleb128 0x10
+ 980 01a0 06       		.uleb128 0x6
+ 981 01a1 50       		.byte	0x50
+ 982 01a2 93       		.byte	0x93
+ 983 01a3 04       		.uleb128 0x4
+ 984 01a4 51       		.byte	0x51
+ 985 01a5 93       		.byte	0x93
+ 986 01a6 04       		.uleb128 0x4
+ 987 01a7 05       		.uleb128 0x5
+ 988 01a8 91       		.byte	0x91
+ 989 01a9 60       		.sleb128 -32
+ 990 01aa F6       		.byte	0xf6
+ 991 01ab 08       		.byte	0x8
+ 992 01ac 25       		.uleb128 0x25
+ 993 01ad 10       		.uleb128 0x10
+ 994 01ae 06       		.uleb128 0x6
+ 995 01af 52       		.byte	0x52
+ 996 01b0 93       		.byte	0x93
+ 997 01b1 04       		.uleb128 0x4
+ 998 01b2 53       		.byte	0x53
+ 999 01b3 93       		.byte	0x93
+ 1000 01b4 04       		.uleb128 0x4
+ 1001 01b5 05       		.uleb128 0x5
+ 1002 01b6 76       		.byte	0x76
+ 1003 01b7 00       		.sleb128 0
+ 1004 01b8 F6       		.byte	0xf6
+ 1005 01b9 08       		.byte	0x8
+ 1006 01ba 25       		.uleb128 0x25
+ 1007 01bb 00       		.byte	0
+ 1008 01bc 00       		.byte	0
+ 1009 01bd 00       		.byte	0
+ 1010 01be 00       		.byte	0
+ 1011 01bf 12       		.uleb128 0x12
+ 1012 01c0 77000000 		.4byte	.LASF32
+ 1013 01c4 01       		.byte	0x1
+ 1014 01c5 36       		.byte	0x36
+ 1015 01c6 6F000000 		.4byte	0x6f
+ 1016 01ca 00000000 		.4byte	.LFB37
+ 1017 01ce 40000000 		.4byte	.LFE37-.LFB37
+ 1018 01d2 01       		.uleb128 0x1
+ 1019 01d3 9C       		.byte	0x9c
+ 1020 01d4 70020000 		.4byte	0x270
+ 1021 01d8 13       		.uleb128 0x13
+ 1022 01d9 1C000000 		.4byte	.LASF33
+ 1023 01dd 01       		.byte	0x1
+ 1024 01de 4D       		.byte	0x4d
+ 1025 01df 70020000 		.4byte	0x270
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 21
+
+
+ 1026 01e3 0A       		.uleb128 0xa
+ 1027 01e4 6B00     		.ascii	"k\000"
+ 1028 01e6 01       		.byte	0x1
+ 1029 01e7 50       		.byte	0x50
+ 1030 01e8 6F000000 		.4byte	0x6f
+ 1031 01ec 7C010000 		.4byte	.LLST8
+ 1032 01f0 08       		.uleb128 0x8
+ 1033 01f1 F9010000 		.4byte	.LASF19
+ 1034 01f5 01       		.byte	0x1
+ 1035 01f6 51       		.byte	0x51
+ 1036 01f7 6F000000 		.4byte	0x6f
+ 1037 01fb 91010000 		.4byte	.LLST9
+ 1038 01ff 14       		.uleb128 0x14
+ 1039 0200 94000000 		.4byte	.LASF20
+ 1040 0204 01       		.byte	0x1
+ 1041 0205 52       		.byte	0x52
+ 1042 0206 25000000 		.4byte	0x25
+ 1043 020a 08       		.byte	0x8
+ 1044 020b 00000000 		.4byte	0
+ 1045 020f 0000E03F 		.4byte	0x3fe00000
+ 1046 0213 15       		.uleb128 0x15
+ 1047 0214 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 1048 0218 66020000 		.4byte	0x266
+ 1049 021c 16       		.uleb128 0x16
+ 1050 021d 6900     		.ascii	"i\000"
+ 1051 021f 01       		.byte	0x1
+ 1052 0220 60       		.byte	0x60
+ 1053 0221 6F000000 		.4byte	0x6f
+ 1054 0225 01       		.uleb128 0x1
+ 1055 0226 54       		.byte	0x54
+ 1056 0227 09       		.uleb128 0x9
+ 1057 0228 18000000 		.4byte	.LBB7
+ 1058 022c 14000000 		.4byte	.LBE7-.LBB7
+ 1059 0230 08       		.uleb128 0x8
+ 1060 0231 07000000 		.4byte	.LASF21
+ 1061 0235 01       		.byte	0x1
+ 1062 0236 61       		.byte	0x61
+ 1063 0237 25000000 		.4byte	0x25
+ 1064 023b B1010000 		.4byte	.LLST10
+ 1065 023f 11       		.uleb128 0x11
+ 1066 0240 2C000000 		.4byte	.LVL40
+ 1067 0244 67030000 		.4byte	0x367
+ 1068 0248 10       		.uleb128 0x10
+ 1069 0249 01       		.uleb128 0x1
+ 1070 024a 50       		.byte	0x50
+ 1071 024b 17       		.uleb128 0x17
+ 1072 024c 74       		.byte	0x74
+ 1073 024d 00       		.sleb128 0
+ 1074 024e 4F       		.byte	0x4f
+ 1075 024f 25       		.byte	0x25
+ 1076 0250 74       		.byte	0x74
+ 1077 0251 00       		.sleb128 0
+ 1078 0252 22       		.byte	0x22
+ 1079 0253 31       		.byte	0x31
+ 1080 0254 26       		.byte	0x26
+ 1081 0255 31       		.byte	0x31
+ 1082 0256 24       		.byte	0x24
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 22
+
+
+ 1083 0257 03       		.byte	0x3
+ 1084 0258 40000000 		.4byte	.LANCHOR1+64
+ 1085 025c 22       		.byte	0x22
+ 1086 025d 94       		.byte	0x94
+ 1087 025e 02       		.byte	0x2
+ 1088 025f 0A       		.byte	0xa
+ 1089 0260 FFFF     		.2byte	0xffff
+ 1090 0262 1A       		.byte	0x1a
+ 1091 0263 00       		.byte	0
+ 1092 0264 00       		.byte	0
+ 1093 0265 00       		.byte	0
+ 1094 0266 17       		.uleb128 0x17
+ 1095 0267 08000000 		.4byte	.LVL34
+ 1096 026b 73030000 		.4byte	0x373
+ 1097 026f 00       		.byte	0
+ 1098 0270 18       		.uleb128 0x18
+ 1099 0271 6F000000 		.4byte	0x6f
+ 1100 0275 80020000 		.4byte	0x280
+ 1101 0279 19       		.uleb128 0x19
+ 1102 027a 9D000000 		.4byte	0x9d
+ 1103 027e 18       		.byte	0x18
+ 1104 027f 00       		.byte	0
+ 1105 0280 18       		.uleb128 0x18
+ 1106 0281 90020000 		.4byte	0x290
+ 1107 0285 90020000 		.4byte	0x290
+ 1108 0289 19       		.uleb128 0x19
+ 1109 028a 9D000000 		.4byte	0x9d
+ 1110 028e 03       		.byte	0x3
+ 1111 028f 00       		.byte	0
+ 1112 0290 05       		.uleb128 0x5
+ 1113 0291 25000000 		.4byte	0x25
+ 1114 0295 1A       		.uleb128 0x1a
+ 1115 0296 00000000 		.4byte	.LASF22
+ 1116 029a 01       		.byte	0x1
+ 1117 029b 10       		.byte	0x10
+ 1118 029c A6020000 		.4byte	0x2a6
+ 1119 02a0 05       		.uleb128 0x5
+ 1120 02a1 03       		.byte	0x3
+ 1121 02a2 00000000 		.4byte	POWERS
+ 1122 02a6 05       		.uleb128 0x5
+ 1123 02a7 80020000 		.4byte	0x280
+ 1124 02ab 1A       		.uleb128 0x1a
+ 1125 02ac 7C000000 		.4byte	.LASF23
+ 1126 02b0 01       		.byte	0x1
+ 1127 02b1 11       		.byte	0x11
+ 1128 02b2 BC020000 		.4byte	0x2bc
+ 1129 02b6 05       		.uleb128 0x5
+ 1130 02b7 03       		.byte	0x3
+ 1131 02b8 20000000 		.4byte	FACTORIALS
+ 1132 02bc 05       		.uleb128 0x5
+ 1133 02bd 80020000 		.4byte	0x280
+ 1134 02c1 18       		.uleb128 0x18
+ 1135 02c2 D1020000 		.4byte	0x2d1
+ 1136 02c6 D1020000 		.4byte	0x2d1
+ 1137 02ca 19       		.uleb128 0x19
+ 1138 02cb 9D000000 		.4byte	0x9d
+ 1139 02cf FF       		.byte	0xff
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 23
+
+
+ 1140 02d0 00       		.byte	0
+ 1141 02d1 05       		.uleb128 0x5
+ 1142 02d2 7D000000 		.4byte	0x7d
+ 1143 02d6 1A       		.uleb128 0x1a
+ 1144 02d7 BB000000 		.4byte	.LASF24
+ 1145 02db 01       		.byte	0x1
+ 1146 02dc 30       		.byte	0x30
+ 1147 02dd E7020000 		.4byte	0x2e7
+ 1148 02e1 05       		.uleb128 0x5
+ 1149 02e2 03       		.byte	0x3
+ 1150 02e3 40000000 		.4byte	sinetable
+ 1151 02e7 05       		.uleb128 0x5
+ 1152 02e8 C1020000 		.4byte	0x2c1
+ 1153 02ec 18       		.uleb128 0x18
+ 1154 02ed A4000000 		.4byte	0xa4
+ 1155 02f1 FC020000 		.4byte	0x2fc
+ 1156 02f5 19       		.uleb128 0x19
+ 1157 02f6 9D000000 		.4byte	0x9d
+ 1158 02fa 19       		.byte	0x19
+ 1159 02fb 00       		.byte	0
+ 1160 02fc 14       		.uleb128 0x14
+ 1161 02fd 02020000 		.4byte	.LASF25
+ 1162 0301 01       		.byte	0x1
+ 1163 0302 33       		.byte	0x33
+ 1164 0303 22030000 		.4byte	0x322
+ 1165 0307 1A       		.byte	0x1a
+ 1166 0308 61       		.byte	0x61
+ 1167 0309 62       		.byte	0x62
+ 1168 030a 63       		.byte	0x63
+ 1169 030b 64       		.byte	0x64
+ 1170 030c 65       		.byte	0x65
+ 1171 030d 66       		.byte	0x66
+ 1172 030e 67       		.byte	0x67
+ 1173 030f 68       		.byte	0x68
+ 1174 0310 69       		.byte	0x69
+ 1175 0311 6A       		.byte	0x6a
+ 1176 0312 6B       		.byte	0x6b
+ 1177 0313 6C       		.byte	0x6c
+ 1178 0314 6D       		.byte	0x6d
+ 1179 0315 6E       		.byte	0x6e
+ 1180 0316 6F       		.byte	0x6f
+ 1181 0317 70       		.byte	0x70
+ 1182 0318 71       		.byte	0x71
+ 1183 0319 72       		.byte	0x72
+ 1184 031a 73       		.byte	0x73
+ 1185 031b 74       		.byte	0x74
+ 1186 031c 75       		.byte	0x75
+ 1187 031d 76       		.byte	0x76
+ 1188 031e 77       		.byte	0x77
+ 1189 031f 78       		.byte	0x78
+ 1190 0320 79       		.byte	0x79
+ 1191 0321 7A       		.byte	0x7a
+ 1192 0322 05       		.uleb128 0x5
+ 1193 0323 EC020000 		.4byte	0x2ec
+ 1194 0327 1B       		.uleb128 0x1b
+ 1195 0328 504900   		.ascii	"PI\000"
+ 1196 032b 01       		.byte	0x1
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 24
+
+
+ 1197 032c 0E       		.byte	0xe
+ 1198 032d 25000000 		.4byte	0x25
+ 1199 0331 05       		.uleb128 0x5
+ 1200 0332 03       		.byte	0x3
+ 1201 0333 00000000 		.4byte	PI
+ 1202 0337 1B       		.uleb128 0x1b
+ 1203 0338 4E00     		.ascii	"N\000"
+ 1204 033a 01       		.byte	0x1
+ 1205 033b 0F       		.byte	0xf
+ 1206 033c 6F000000 		.4byte	0x6f
+ 1207 0340 05       		.uleb128 0x5
+ 1208 0341 03       		.byte	0x3
+ 1209 0342 00000000 		.4byte	N
+ 1210 0346 18       		.uleb128 0x18
+ 1211 0347 25000000 		.4byte	0x25
+ 1212 034b 56030000 		.4byte	0x356
+ 1213 034f 19       		.uleb128 0x19
+ 1214 0350 9D000000 		.4byte	0x9d
+ 1215 0354 3F       		.byte	0x3f
+ 1216 0355 00       		.byte	0
+ 1217 0356 1C       		.uleb128 0x1c
+ 1218 0357 3F000000 		.4byte	.LASF26
+ 1219 035b 01       		.byte	0x1
+ 1220 035c 2F       		.byte	0x2f
+ 1221 035d 46030000 		.4byte	0x346
+ 1222 0361 05       		.uleb128 0x5
+ 1223 0362 03       		.byte	0x3
+ 1224 0363 00000000 		.4byte	Sine_Lookup
+ 1225 0367 1D       		.uleb128 0x1d
+ 1226 0368 84010000 		.4byte	.LASF27
+ 1227 036c 84010000 		.4byte	.LASF27
+ 1228 0370 04       		.byte	0x4
+ 1229 0371 5501     		.2byte	0x155
+ 1230 0373 1D       		.uleb128 0x1d
+ 1231 0374 0A020000 		.4byte	.LASF28
+ 1232 0378 0A020000 		.4byte	.LASF28
+ 1233 037c 04       		.byte	0x4
+ 1234 037d 3201     		.2byte	0x132
+ 1235 037f 00       		.byte	0
+ 1236              		.section	.debug_abbrev,"",%progbits
+ 1237              	.Ldebug_abbrev0:
+ 1238 0000 01       		.uleb128 0x1
+ 1239 0001 11       		.uleb128 0x11
+ 1240 0002 01       		.byte	0x1
+ 1241 0003 25       		.uleb128 0x25
+ 1242 0004 0E       		.uleb128 0xe
+ 1243 0005 13       		.uleb128 0x13
+ 1244 0006 0B       		.uleb128 0xb
+ 1245 0007 03       		.uleb128 0x3
+ 1246 0008 0E       		.uleb128 0xe
+ 1247 0009 1B       		.uleb128 0x1b
+ 1248 000a 0E       		.uleb128 0xe
+ 1249 000b 55       		.uleb128 0x55
+ 1250 000c 17       		.uleb128 0x17
+ 1251 000d 11       		.uleb128 0x11
+ 1252 000e 01       		.uleb128 0x1
+ 1253 000f 10       		.uleb128 0x10
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 25
+
+
+ 1254 0010 17       		.uleb128 0x17
+ 1255 0011 00       		.byte	0
+ 1256 0012 00       		.byte	0
+ 1257 0013 02       		.uleb128 0x2
+ 1258 0014 24       		.uleb128 0x24
+ 1259 0015 00       		.byte	0
+ 1260 0016 0B       		.uleb128 0xb
+ 1261 0017 0B       		.uleb128 0xb
+ 1262 0018 3E       		.uleb128 0x3e
+ 1263 0019 0B       		.uleb128 0xb
+ 1264 001a 03       		.uleb128 0x3
+ 1265 001b 0E       		.uleb128 0xe
+ 1266 001c 00       		.byte	0
+ 1267 001d 00       		.byte	0
+ 1268 001e 03       		.uleb128 0x3
+ 1269 001f 16       		.uleb128 0x16
+ 1270 0020 00       		.byte	0
+ 1271 0021 03       		.uleb128 0x3
+ 1272 0022 0E       		.uleb128 0xe
+ 1273 0023 3A       		.uleb128 0x3a
+ 1274 0024 0B       		.uleb128 0xb
+ 1275 0025 3B       		.uleb128 0x3b
+ 1276 0026 0B       		.uleb128 0xb
+ 1277 0027 49       		.uleb128 0x49
+ 1278 0028 13       		.uleb128 0x13
+ 1279 0029 00       		.byte	0
+ 1280 002a 00       		.byte	0
+ 1281 002b 04       		.uleb128 0x4
+ 1282 002c 24       		.uleb128 0x24
+ 1283 002d 00       		.byte	0
+ 1284 002e 0B       		.uleb128 0xb
+ 1285 002f 0B       		.uleb128 0xb
+ 1286 0030 3E       		.uleb128 0x3e
+ 1287 0031 0B       		.uleb128 0xb
+ 1288 0032 03       		.uleb128 0x3
+ 1289 0033 08       		.uleb128 0x8
+ 1290 0034 00       		.byte	0
+ 1291 0035 00       		.byte	0
+ 1292 0036 05       		.uleb128 0x5
+ 1293 0037 26       		.uleb128 0x26
+ 1294 0038 00       		.byte	0
+ 1295 0039 49       		.uleb128 0x49
+ 1296 003a 13       		.uleb128 0x13
+ 1297 003b 00       		.byte	0
+ 1298 003c 00       		.byte	0
+ 1299 003d 06       		.uleb128 0x6
+ 1300 003e 2E       		.uleb128 0x2e
+ 1301 003f 01       		.byte	0x1
+ 1302 0040 3F       		.uleb128 0x3f
+ 1303 0041 19       		.uleb128 0x19
+ 1304 0042 03       		.uleb128 0x3
+ 1305 0043 0E       		.uleb128 0xe
+ 1306 0044 3A       		.uleb128 0x3a
+ 1307 0045 0B       		.uleb128 0xb
+ 1308 0046 3B       		.uleb128 0x3b
+ 1309 0047 0B       		.uleb128 0xb
+ 1310 0048 27       		.uleb128 0x27
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 26
+
+
+ 1311 0049 19       		.uleb128 0x19
+ 1312 004a 49       		.uleb128 0x49
+ 1313 004b 13       		.uleb128 0x13
+ 1314 004c 11       		.uleb128 0x11
+ 1315 004d 01       		.uleb128 0x1
+ 1316 004e 12       		.uleb128 0x12
+ 1317 004f 06       		.uleb128 0x6
+ 1318 0050 40       		.uleb128 0x40
+ 1319 0051 18       		.uleb128 0x18
+ 1320 0052 9642     		.uleb128 0x2116
+ 1321 0054 19       		.uleb128 0x19
+ 1322 0055 01       		.uleb128 0x1
+ 1323 0056 13       		.uleb128 0x13
+ 1324 0057 00       		.byte	0
+ 1325 0058 00       		.byte	0
+ 1326 0059 07       		.uleb128 0x7
+ 1327 005a 05       		.uleb128 0x5
+ 1328 005b 00       		.byte	0
+ 1329 005c 03       		.uleb128 0x3
+ 1330 005d 08       		.uleb128 0x8
+ 1331 005e 3A       		.uleb128 0x3a
+ 1332 005f 0B       		.uleb128 0xb
+ 1333 0060 3B       		.uleb128 0x3b
+ 1334 0061 0B       		.uleb128 0xb
+ 1335 0062 49       		.uleb128 0x49
+ 1336 0063 13       		.uleb128 0x13
+ 1337 0064 02       		.uleb128 0x2
+ 1338 0065 17       		.uleb128 0x17
+ 1339 0066 00       		.byte	0
+ 1340 0067 00       		.byte	0
+ 1341 0068 08       		.uleb128 0x8
+ 1342 0069 34       		.uleb128 0x34
+ 1343 006a 00       		.byte	0
+ 1344 006b 03       		.uleb128 0x3
+ 1345 006c 0E       		.uleb128 0xe
+ 1346 006d 3A       		.uleb128 0x3a
+ 1347 006e 0B       		.uleb128 0xb
+ 1348 006f 3B       		.uleb128 0x3b
+ 1349 0070 0B       		.uleb128 0xb
+ 1350 0071 49       		.uleb128 0x49
+ 1351 0072 13       		.uleb128 0x13
+ 1352 0073 02       		.uleb128 0x2
+ 1353 0074 17       		.uleb128 0x17
+ 1354 0075 00       		.byte	0
+ 1355 0076 00       		.byte	0
+ 1356 0077 09       		.uleb128 0x9
+ 1357 0078 0B       		.uleb128 0xb
+ 1358 0079 01       		.byte	0x1
+ 1359 007a 11       		.uleb128 0x11
+ 1360 007b 01       		.uleb128 0x1
+ 1361 007c 12       		.uleb128 0x12
+ 1362 007d 06       		.uleb128 0x6
+ 1363 007e 00       		.byte	0
+ 1364 007f 00       		.byte	0
+ 1365 0080 0A       		.uleb128 0xa
+ 1366 0081 34       		.uleb128 0x34
+ 1367 0082 00       		.byte	0
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 27
+
+
+ 1368 0083 03       		.uleb128 0x3
+ 1369 0084 08       		.uleb128 0x8
+ 1370 0085 3A       		.uleb128 0x3a
+ 1371 0086 0B       		.uleb128 0xb
+ 1372 0087 3B       		.uleb128 0x3b
+ 1373 0088 0B       		.uleb128 0xb
+ 1374 0089 49       		.uleb128 0x49
+ 1375 008a 13       		.uleb128 0x13
+ 1376 008b 02       		.uleb128 0x2
+ 1377 008c 17       		.uleb128 0x17
+ 1378 008d 00       		.byte	0
+ 1379 008e 00       		.byte	0
+ 1380 008f 0B       		.uleb128 0xb
+ 1381 0090 2E       		.uleb128 0x2e
+ 1382 0091 01       		.byte	0x1
+ 1383 0092 3F       		.uleb128 0x3f
+ 1384 0093 19       		.uleb128 0x19
+ 1385 0094 03       		.uleb128 0x3
+ 1386 0095 08       		.uleb128 0x8
+ 1387 0096 3A       		.uleb128 0x3a
+ 1388 0097 0B       		.uleb128 0xb
+ 1389 0098 3B       		.uleb128 0x3b
+ 1390 0099 0B       		.uleb128 0xb
+ 1391 009a 27       		.uleb128 0x27
+ 1392 009b 19       		.uleb128 0x19
+ 1393 009c 49       		.uleb128 0x49
+ 1394 009d 13       		.uleb128 0x13
+ 1395 009e 11       		.uleb128 0x11
+ 1396 009f 01       		.uleb128 0x1
+ 1397 00a0 12       		.uleb128 0x12
+ 1398 00a1 06       		.uleb128 0x6
+ 1399 00a2 40       		.uleb128 0x40
+ 1400 00a3 18       		.uleb128 0x18
+ 1401 00a4 9642     		.uleb128 0x2116
+ 1402 00a6 19       		.uleb128 0x19
+ 1403 00a7 01       		.uleb128 0x1
+ 1404 00a8 13       		.uleb128 0x13
+ 1405 00a9 00       		.byte	0
+ 1406 00aa 00       		.byte	0
+ 1407 00ab 0C       		.uleb128 0xc
+ 1408 00ac 0B       		.uleb128 0xb
+ 1409 00ad 01       		.byte	0x1
+ 1410 00ae 55       		.uleb128 0x55
+ 1411 00af 17       		.uleb128 0x17
+ 1412 00b0 00       		.byte	0
+ 1413 00b1 00       		.byte	0
+ 1414 00b2 0D       		.uleb128 0xd
+ 1415 00b3 2E       		.uleb128 0x2e
+ 1416 00b4 01       		.byte	0x1
+ 1417 00b5 3F       		.uleb128 0x3f
+ 1418 00b6 19       		.uleb128 0x19
+ 1419 00b7 03       		.uleb128 0x3
+ 1420 00b8 0E       		.uleb128 0xe
+ 1421 00b9 3A       		.uleb128 0x3a
+ 1422 00ba 0B       		.uleb128 0xb
+ 1423 00bb 3B       		.uleb128 0x3b
+ 1424 00bc 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 28
+
+
+ 1425 00bd 49       		.uleb128 0x49
+ 1426 00be 13       		.uleb128 0x13
+ 1427 00bf 3C       		.uleb128 0x3c
+ 1428 00c0 19       		.uleb128 0x19
+ 1429 00c1 01       		.uleb128 0x1
+ 1430 00c2 13       		.uleb128 0x13
+ 1431 00c3 00       		.byte	0
+ 1432 00c4 00       		.byte	0
+ 1433 00c5 0E       		.uleb128 0xe
+ 1434 00c6 18       		.uleb128 0x18
+ 1435 00c7 00       		.byte	0
+ 1436 00c8 00       		.byte	0
+ 1437 00c9 00       		.byte	0
+ 1438 00ca 0F       		.uleb128 0xf
+ 1439 00cb 898201   		.uleb128 0x4109
+ 1440 00ce 01       		.byte	0x1
+ 1441 00cf 11       		.uleb128 0x11
+ 1442 00d0 01       		.uleb128 0x1
+ 1443 00d1 31       		.uleb128 0x31
+ 1444 00d2 13       		.uleb128 0x13
+ 1445 00d3 01       		.uleb128 0x1
+ 1446 00d4 13       		.uleb128 0x13
+ 1447 00d5 00       		.byte	0
+ 1448 00d6 00       		.byte	0
+ 1449 00d7 10       		.uleb128 0x10
+ 1450 00d8 8A8201   		.uleb128 0x410a
+ 1451 00db 00       		.byte	0
+ 1452 00dc 02       		.uleb128 0x2
+ 1453 00dd 18       		.uleb128 0x18
+ 1454 00de 9142     		.uleb128 0x2111
+ 1455 00e0 18       		.uleb128 0x18
+ 1456 00e1 00       		.byte	0
+ 1457 00e2 00       		.byte	0
+ 1458 00e3 11       		.uleb128 0x11
+ 1459 00e4 898201   		.uleb128 0x4109
+ 1460 00e7 01       		.byte	0x1
+ 1461 00e8 11       		.uleb128 0x11
+ 1462 00e9 01       		.uleb128 0x1
+ 1463 00ea 31       		.uleb128 0x31
+ 1464 00eb 13       		.uleb128 0x13
+ 1465 00ec 00       		.byte	0
+ 1466 00ed 00       		.byte	0
+ 1467 00ee 12       		.uleb128 0x12
+ 1468 00ef 2E       		.uleb128 0x2e
+ 1469 00f0 01       		.byte	0x1
+ 1470 00f1 3F       		.uleb128 0x3f
+ 1471 00f2 19       		.uleb128 0x19
+ 1472 00f3 03       		.uleb128 0x3
+ 1473 00f4 0E       		.uleb128 0xe
+ 1474 00f5 3A       		.uleb128 0x3a
+ 1475 00f6 0B       		.uleb128 0xb
+ 1476 00f7 3B       		.uleb128 0x3b
+ 1477 00f8 0B       		.uleb128 0xb
+ 1478 00f9 27       		.uleb128 0x27
+ 1479 00fa 19       		.uleb128 0x19
+ 1480 00fb 49       		.uleb128 0x49
+ 1481 00fc 13       		.uleb128 0x13
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 29
+
+
+ 1482 00fd 8701     		.uleb128 0x87
+ 1483 00ff 19       		.uleb128 0x19
+ 1484 0100 11       		.uleb128 0x11
+ 1485 0101 01       		.uleb128 0x1
+ 1486 0102 12       		.uleb128 0x12
+ 1487 0103 06       		.uleb128 0x6
+ 1488 0104 40       		.uleb128 0x40
+ 1489 0105 18       		.uleb128 0x18
+ 1490 0106 9742     		.uleb128 0x2117
+ 1491 0108 19       		.uleb128 0x19
+ 1492 0109 01       		.uleb128 0x1
+ 1493 010a 13       		.uleb128 0x13
+ 1494 010b 00       		.byte	0
+ 1495 010c 00       		.byte	0
+ 1496 010d 13       		.uleb128 0x13
+ 1497 010e 34       		.uleb128 0x34
+ 1498 010f 00       		.byte	0
+ 1499 0110 03       		.uleb128 0x3
+ 1500 0111 0E       		.uleb128 0xe
+ 1501 0112 3A       		.uleb128 0x3a
+ 1502 0113 0B       		.uleb128 0xb
+ 1503 0114 3B       		.uleb128 0x3b
+ 1504 0115 0B       		.uleb128 0xb
+ 1505 0116 49       		.uleb128 0x49
+ 1506 0117 13       		.uleb128 0x13
+ 1507 0118 00       		.byte	0
+ 1508 0119 00       		.byte	0
+ 1509 011a 14       		.uleb128 0x14
+ 1510 011b 34       		.uleb128 0x34
+ 1511 011c 00       		.byte	0
+ 1512 011d 03       		.uleb128 0x3
+ 1513 011e 0E       		.uleb128 0xe
+ 1514 011f 3A       		.uleb128 0x3a
+ 1515 0120 0B       		.uleb128 0xb
+ 1516 0121 3B       		.uleb128 0x3b
+ 1517 0122 0B       		.uleb128 0xb
+ 1518 0123 49       		.uleb128 0x49
+ 1519 0124 13       		.uleb128 0x13
+ 1520 0125 1C       		.uleb128 0x1c
+ 1521 0126 0A       		.uleb128 0xa
+ 1522 0127 00       		.byte	0
+ 1523 0128 00       		.byte	0
+ 1524 0129 15       		.uleb128 0x15
+ 1525 012a 0B       		.uleb128 0xb
+ 1526 012b 01       		.byte	0x1
+ 1527 012c 55       		.uleb128 0x55
+ 1528 012d 17       		.uleb128 0x17
+ 1529 012e 01       		.uleb128 0x1
+ 1530 012f 13       		.uleb128 0x13
+ 1531 0130 00       		.byte	0
+ 1532 0131 00       		.byte	0
+ 1533 0132 16       		.uleb128 0x16
+ 1534 0133 34       		.uleb128 0x34
+ 1535 0134 00       		.byte	0
+ 1536 0135 03       		.uleb128 0x3
+ 1537 0136 08       		.uleb128 0x8
+ 1538 0137 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 30
+
+
+ 1539 0138 0B       		.uleb128 0xb
+ 1540 0139 3B       		.uleb128 0x3b
+ 1541 013a 0B       		.uleb128 0xb
+ 1542 013b 49       		.uleb128 0x49
+ 1543 013c 13       		.uleb128 0x13
+ 1544 013d 02       		.uleb128 0x2
+ 1545 013e 18       		.uleb128 0x18
+ 1546 013f 00       		.byte	0
+ 1547 0140 00       		.byte	0
+ 1548 0141 17       		.uleb128 0x17
+ 1549 0142 898201   		.uleb128 0x4109
+ 1550 0145 00       		.byte	0
+ 1551 0146 11       		.uleb128 0x11
+ 1552 0147 01       		.uleb128 0x1
+ 1553 0148 31       		.uleb128 0x31
+ 1554 0149 13       		.uleb128 0x13
+ 1555 014a 00       		.byte	0
+ 1556 014b 00       		.byte	0
+ 1557 014c 18       		.uleb128 0x18
+ 1558 014d 01       		.uleb128 0x1
+ 1559 014e 01       		.byte	0x1
+ 1560 014f 49       		.uleb128 0x49
+ 1561 0150 13       		.uleb128 0x13
+ 1562 0151 01       		.uleb128 0x1
+ 1563 0152 13       		.uleb128 0x13
+ 1564 0153 00       		.byte	0
+ 1565 0154 00       		.byte	0
+ 1566 0155 19       		.uleb128 0x19
+ 1567 0156 21       		.uleb128 0x21
+ 1568 0157 00       		.byte	0
+ 1569 0158 49       		.uleb128 0x49
+ 1570 0159 13       		.uleb128 0x13
+ 1571 015a 2F       		.uleb128 0x2f
+ 1572 015b 0B       		.uleb128 0xb
+ 1573 015c 00       		.byte	0
+ 1574 015d 00       		.byte	0
+ 1575 015e 1A       		.uleb128 0x1a
+ 1576 015f 34       		.uleb128 0x34
+ 1577 0160 00       		.byte	0
+ 1578 0161 03       		.uleb128 0x3
+ 1579 0162 0E       		.uleb128 0xe
+ 1580 0163 3A       		.uleb128 0x3a
+ 1581 0164 0B       		.uleb128 0xb
+ 1582 0165 3B       		.uleb128 0x3b
+ 1583 0166 0B       		.uleb128 0xb
+ 1584 0167 49       		.uleb128 0x49
+ 1585 0168 13       		.uleb128 0x13
+ 1586 0169 02       		.uleb128 0x2
+ 1587 016a 18       		.uleb128 0x18
+ 1588 016b 00       		.byte	0
+ 1589 016c 00       		.byte	0
+ 1590 016d 1B       		.uleb128 0x1b
+ 1591 016e 34       		.uleb128 0x34
+ 1592 016f 00       		.byte	0
+ 1593 0170 03       		.uleb128 0x3
+ 1594 0171 08       		.uleb128 0x8
+ 1595 0172 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 31
+
+
+ 1596 0173 0B       		.uleb128 0xb
+ 1597 0174 3B       		.uleb128 0x3b
+ 1598 0175 0B       		.uleb128 0xb
+ 1599 0176 49       		.uleb128 0x49
+ 1600 0177 13       		.uleb128 0x13
+ 1601 0178 3F       		.uleb128 0x3f
+ 1602 0179 19       		.uleb128 0x19
+ 1603 017a 02       		.uleb128 0x2
+ 1604 017b 18       		.uleb128 0x18
+ 1605 017c 00       		.byte	0
+ 1606 017d 00       		.byte	0
+ 1607 017e 1C       		.uleb128 0x1c
+ 1608 017f 34       		.uleb128 0x34
+ 1609 0180 00       		.byte	0
+ 1610 0181 03       		.uleb128 0x3
+ 1611 0182 0E       		.uleb128 0xe
+ 1612 0183 3A       		.uleb128 0x3a
+ 1613 0184 0B       		.uleb128 0xb
+ 1614 0185 3B       		.uleb128 0x3b
+ 1615 0186 0B       		.uleb128 0xb
+ 1616 0187 49       		.uleb128 0x49
+ 1617 0188 13       		.uleb128 0x13
+ 1618 0189 3F       		.uleb128 0x3f
+ 1619 018a 19       		.uleb128 0x19
+ 1620 018b 02       		.uleb128 0x2
+ 1621 018c 18       		.uleb128 0x18
+ 1622 018d 00       		.byte	0
+ 1623 018e 00       		.byte	0
+ 1624 018f 1D       		.uleb128 0x1d
+ 1625 0190 2E       		.uleb128 0x2e
+ 1626 0191 00       		.byte	0
+ 1627 0192 3F       		.uleb128 0x3f
+ 1628 0193 19       		.uleb128 0x19
+ 1629 0194 3C       		.uleb128 0x3c
+ 1630 0195 19       		.uleb128 0x19
+ 1631 0196 6E       		.uleb128 0x6e
+ 1632 0197 0E       		.uleb128 0xe
+ 1633 0198 03       		.uleb128 0x3
+ 1634 0199 0E       		.uleb128 0xe
+ 1635 019a 3A       		.uleb128 0x3a
+ 1636 019b 0B       		.uleb128 0xb
+ 1637 019c 3B       		.uleb128 0x3b
+ 1638 019d 05       		.uleb128 0x5
+ 1639 019e 00       		.byte	0
+ 1640 019f 00       		.byte	0
+ 1641 01a0 00       		.byte	0
+ 1642              		.section	.debug_loc,"",%progbits
+ 1643              	.Ldebug_loc0:
+ 1644              	.LLST0:
+ 1645 0000 00000000 		.4byte	.LVL0
+ 1646 0004 0B000000 		.4byte	.LVL1-1
+ 1647 0008 0100     		.2byte	0x1
+ 1648 000a 50       		.byte	0x50
+ 1649 000b 0B000000 		.4byte	.LVL1-1
+ 1650 000f 48000000 		.4byte	.LFE36
+ 1651 0013 0400     		.2byte	0x4
+ 1652 0015 F3       		.byte	0xf3
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 32
+
+
+ 1653 0016 01       		.uleb128 0x1
+ 1654 0017 50       		.byte	0x50
+ 1655 0018 9F       		.byte	0x9f
+ 1656 0019 00000000 		.4byte	0
+ 1657 001d 00000000 		.4byte	0
+ 1658              	.LLST1:
+ 1659 0021 00000000 		.4byte	.LVL0
+ 1660 0025 0B000000 		.4byte	.LVL1-1
+ 1661 0029 0600     		.2byte	0x6
+ 1662 002b 52       		.byte	0x52
+ 1663 002c 93       		.byte	0x93
+ 1664 002d 04       		.uleb128 0x4
+ 1665 002e 53       		.byte	0x53
+ 1666 002f 93       		.byte	0x93
+ 1667 0030 04       		.uleb128 0x4
+ 1668 0031 0B000000 		.4byte	.LVL1-1
+ 1669 0035 48000000 		.4byte	.LFE36
+ 1670 0039 0200     		.2byte	0x2
+ 1671 003b 91       		.byte	0x91
+ 1672 003c 68       		.sleb128 -24
+ 1673 003d 00000000 		.4byte	0
+ 1674 0041 00000000 		.4byte	0
+ 1675              	.LLST2:
+ 1676 0045 10000000 		.4byte	.LVL2
+ 1677 0049 18000000 		.4byte	.LVL3
+ 1678 004d 0600     		.2byte	0x6
+ 1679 004f 50       		.byte	0x50
+ 1680 0050 93       		.byte	0x93
+ 1681 0051 04       		.uleb128 0x4
+ 1682 0052 51       		.byte	0x51
+ 1683 0053 93       		.byte	0x93
+ 1684 0054 04       		.uleb128 0x4
+ 1685 0055 18000000 		.4byte	.LVL3
+ 1686 0059 26000000 		.4byte	.LVL5
+ 1687 005d 0600     		.2byte	0x6
+ 1688 005f 54       		.byte	0x54
+ 1689 0060 93       		.byte	0x93
+ 1690 0061 04       		.uleb128 0x4
+ 1691 0062 55       		.byte	0x55
+ 1692 0063 93       		.byte	0x93
+ 1693 0064 04       		.uleb128 0x4
+ 1694 0065 28000000 		.4byte	.LVL6
+ 1695 0069 46000000 		.4byte	.LVL11
+ 1696 006d 0600     		.2byte	0x6
+ 1697 006f 54       		.byte	0x54
+ 1698 0070 93       		.byte	0x93
+ 1699 0071 04       		.uleb128 0x4
+ 1700 0072 55       		.byte	0x55
+ 1701 0073 93       		.byte	0x93
+ 1702 0074 04       		.uleb128 0x4
+ 1703 0075 00000000 		.4byte	0
+ 1704 0079 00000000 		.4byte	0
+ 1705              	.LLST3:
+ 1706 007d 10000000 		.4byte	.LVL2
+ 1707 0081 18000000 		.4byte	.LVL3
+ 1708 0085 0200     		.2byte	0x2
+ 1709 0087 30       		.byte	0x30
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 33
+
+
+ 1710 0088 9F       		.byte	0x9f
+ 1711 0089 18000000 		.4byte	.LVL3
+ 1712 008d 46000000 		.4byte	.LVL12
+ 1713 0091 0100     		.2byte	0x1
+ 1714 0093 56       		.byte	0x56
+ 1715 0094 00000000 		.4byte	0
+ 1716 0098 00000000 		.4byte	0
+ 1717              	.LLST4:
+ 1718 009c 00000000 		.4byte	.LVL13
+ 1719 00a0 19000000 		.4byte	.LVL14-1
+ 1720 00a4 0600     		.2byte	0x6
+ 1721 00a6 50       		.byte	0x50
+ 1722 00a7 93       		.byte	0x93
+ 1723 00a8 04       		.uleb128 0x4
+ 1724 00a9 51       		.byte	0x51
+ 1725 00aa 93       		.byte	0x93
+ 1726 00ab 04       		.uleb128 0x4
+ 1727 00ac 19000000 		.4byte	.LVL14-1
+ 1728 00b0 3C000000 		.4byte	.LVL20
+ 1729 00b4 0600     		.2byte	0x6
+ 1730 00b6 F3       		.byte	0xf3
+ 1731 00b7 03       		.uleb128 0x3
+ 1732 00b8 F5       		.byte	0xf5
+ 1733 00b9 00       		.uleb128 0
+ 1734 00ba 25       		.uleb128 0x25
+ 1735 00bb 9F       		.byte	0x9f
+ 1736 00bc 3C000000 		.4byte	.LVL20
+ 1737 00c0 46000000 		.4byte	.LVL21
+ 1738 00c4 0600     		.2byte	0x6
+ 1739 00c6 50       		.byte	0x50
+ 1740 00c7 93       		.byte	0x93
+ 1741 00c8 04       		.uleb128 0x4
+ 1742 00c9 51       		.byte	0x51
+ 1743 00ca 93       		.byte	0x93
+ 1744 00cb 04       		.uleb128 0x4
+ 1745 00cc 46000000 		.4byte	.LVL21
+ 1746 00d0 C4000000 		.4byte	.LFE35
+ 1747 00d4 0200     		.2byte	0x2
+ 1748 00d6 91       		.byte	0x91
+ 1749 00d7 60       		.sleb128 -32
+ 1750 00d8 00000000 		.4byte	0
+ 1751 00dc 00000000 		.4byte	0
+ 1752              	.LLST5:
+ 1753 00e0 20000000 		.4byte	.LVL16
+ 1754 00e4 23000000 		.4byte	.LVL17-1
+ 1755 00e8 0100     		.2byte	0x1
+ 1756 00ea 50       		.byte	0x50
+ 1757 00eb 23000000 		.4byte	.LVL17-1
+ 1758 00ef B4000000 		.4byte	.LVL33
+ 1759 00f3 0100     		.2byte	0x1
+ 1760 00f5 59       		.byte	0x59
+ 1761 00f6 00000000 		.4byte	0
+ 1762 00fa 00000000 		.4byte	0
+ 1763              	.LLST6:
+ 1764 00fe 3C000000 		.4byte	.LVL20
+ 1765 0102 46000000 		.4byte	.LVL21
+ 1766 0106 0A00     		.2byte	0xa
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 34
+
+
+ 1767 0108 9E       		.byte	0x9e
+ 1768 0109 08       		.uleb128 0x8
+ 1769 010a 00000000 		.4byte	0
+ 1770 010e 00000000 		.4byte	0
+ 1771 0112 46000000 		.4byte	.LVL21
+ 1772 0116 8A000000 		.4byte	.LVL27
+ 1773 011a 0700     		.2byte	0x7
+ 1774 011c 91       		.byte	0x91
+ 1775 011d 5C       		.sleb128 -36
+ 1776 011e 93       		.byte	0x93
+ 1777 011f 04       		.uleb128 0x4
+ 1778 0120 54       		.byte	0x54
+ 1779 0121 93       		.byte	0x93
+ 1780 0122 04       		.uleb128 0x4
+ 1781 0123 8C000000 		.4byte	.LVL28
+ 1782 0127 8E000000 		.4byte	.LVL29
+ 1783 012b 0600     		.2byte	0x6
+ 1784 012d 50       		.byte	0x50
+ 1785 012e 93       		.byte	0x93
+ 1786 012f 04       		.uleb128 0x4
+ 1787 0130 51       		.byte	0x51
+ 1788 0131 93       		.byte	0x93
+ 1789 0132 04       		.uleb128 0x4
+ 1790 0133 8E000000 		.4byte	.LVL29
+ 1791 0137 B4000000 		.4byte	.LVL31
+ 1792 013b 0700     		.2byte	0x7
+ 1793 013d 91       		.byte	0x91
+ 1794 013e 5C       		.sleb128 -36
+ 1795 013f 93       		.byte	0x93
+ 1796 0140 04       		.uleb128 0x4
+ 1797 0141 54       		.byte	0x54
+ 1798 0142 93       		.byte	0x93
+ 1799 0143 04       		.uleb128 0x4
+ 1800 0144 B4000000 		.4byte	.LVL31
+ 1801 0148 C4000000 		.4byte	.LFE35
+ 1802 014c 0700     		.2byte	0x7
+ 1803 014e 91       		.byte	0x91
+ 1804 014f 5C       		.sleb128 -36
+ 1805 0150 93       		.byte	0x93
+ 1806 0151 04       		.uleb128 0x4
+ 1807 0152 51       		.byte	0x51
+ 1808 0153 93       		.byte	0x93
+ 1809 0154 04       		.uleb128 0x4
+ 1810 0155 00000000 		.4byte	0
+ 1811 0159 00000000 		.4byte	0
+ 1812              	.LLST7:
+ 1813 015d 3C000000 		.4byte	.LVL20
+ 1814 0161 46000000 		.4byte	.LVL21
+ 1815 0165 0200     		.2byte	0x2
+ 1816 0167 30       		.byte	0x30
+ 1817 0168 9F       		.byte	0x9f
+ 1818 0169 46000000 		.4byte	.LVL21
+ 1819 016d B4000000 		.4byte	.LVL32
+ 1820 0171 0100     		.2byte	0x1
+ 1821 0173 55       		.byte	0x55
+ 1822 0174 00000000 		.4byte	0
+ 1823 0178 00000000 		.4byte	0
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 35
+
+
+ 1824              	.LLST8:
+ 1825 017c 08000000 		.4byte	.LVL34
+ 1826 0180 0C000000 		.4byte	.LVL35
+ 1827 0184 0300     		.2byte	0x3
+ 1828 0186 09       		.byte	0x9
+ 1829 0187 FF       		.byte	0xff
+ 1830 0188 9F       		.byte	0x9f
+ 1831 0189 00000000 		.4byte	0
+ 1832 018d 00000000 		.4byte	0
+ 1833              	.LLST9:
+ 1834 0191 08000000 		.4byte	.LVL34
+ 1835 0195 0C000000 		.4byte	.LVL35
+ 1836 0199 0300     		.2byte	0x3
+ 1837 019b 09       		.byte	0x9
+ 1838 019c FF       		.byte	0xff
+ 1839 019d 9F       		.byte	0x9f
+ 1840 019e 0C000000 		.4byte	.LVL35
+ 1841 01a2 40000000 		.4byte	.LFE37
+ 1842 01a6 0100     		.2byte	0x1
+ 1843 01a8 55       		.byte	0x55
+ 1844 01a9 00000000 		.4byte	0
+ 1845 01ad 00000000 		.4byte	0
+ 1846              	.LLST10:
+ 1847 01b1 28000000 		.4byte	.LVL39
+ 1848 01b5 2B000000 		.4byte	.LVL40-1
+ 1849 01b9 0700     		.2byte	0x7
+ 1850 01bb 70       		.byte	0x70
+ 1851 01bc 00       		.sleb128 0
+ 1852 01bd F7       		.byte	0xf7
+ 1853 01be 2C       		.uleb128 0x2c
+ 1854 01bf F7       		.byte	0xf7
+ 1855 01c0 25       		.uleb128 0x25
+ 1856 01c1 9F       		.byte	0x9f
+ 1857 01c2 2B000000 		.4byte	.LVL40-1
+ 1858 01c6 2E000000 		.4byte	.LVL41
+ 1859 01ca 1800     		.2byte	0x18
+ 1860 01cc 74       		.byte	0x74
+ 1861 01cd 00       		.sleb128 0
+ 1862 01ce 4F       		.byte	0x4f
+ 1863 01cf 25       		.byte	0x25
+ 1864 01d0 74       		.byte	0x74
+ 1865 01d1 00       		.sleb128 0
+ 1866 01d2 22       		.byte	0x22
+ 1867 01d3 31       		.byte	0x31
+ 1868 01d4 26       		.byte	0x26
+ 1869 01d5 31       		.byte	0x31
+ 1870 01d6 24       		.byte	0x24
+ 1871 01d7 03       		.byte	0x3
+ 1872 01d8 40000000 		.4byte	.LANCHOR1+64
+ 1873 01dc 22       		.byte	0x22
+ 1874 01dd 94       		.byte	0x94
+ 1875 01de 02       		.byte	0x2
+ 1876 01df F7       		.byte	0xf7
+ 1877 01e0 2C       		.uleb128 0x2c
+ 1878 01e1 F7       		.byte	0xf7
+ 1879 01e2 25       		.uleb128 0x25
+ 1880 01e3 9F       		.byte	0x9f
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 36
+
+
+ 1881 01e4 00000000 		.4byte	0
+ 1882 01e8 00000000 		.4byte	0
+ 1883              		.section	.debug_aranges,"",%progbits
+ 1884 0000 2C000000 		.4byte	0x2c
+ 1885 0004 0200     		.2byte	0x2
+ 1886 0006 00000000 		.4byte	.Ldebug_info0
+ 1887 000a 04       		.byte	0x4
+ 1888 000b 00       		.byte	0
+ 1889 000c 0000     		.2byte	0
+ 1890 000e 0000     		.2byte	0
+ 1891 0010 00000000 		.4byte	.LFB36
+ 1892 0014 48000000 		.4byte	.LFE36-.LFB36
+ 1893 0018 00000000 		.4byte	.LFB35
+ 1894 001c C4000000 		.4byte	.LFE35-.LFB35
+ 1895 0020 00000000 		.4byte	.LFB37
+ 1896 0024 40000000 		.4byte	.LFE37-.LFB37
+ 1897 0028 00000000 		.4byte	0
+ 1898 002c 00000000 		.4byte	0
+ 1899              		.section	.debug_ranges,"",%progbits
+ 1900              	.Ldebug_ranges0:
+ 1901 0000 3C000000 		.4byte	.LBB3
+ 1902 0004 3E000000 		.4byte	.LBE3
+ 1903 0008 44000000 		.4byte	.LBB5
+ 1904 000c 96000000 		.4byte	.LBE5
+ 1905 0010 00000000 		.4byte	0
+ 1906 0014 00000000 		.4byte	0
+ 1907 0018 14000000 		.4byte	.LBB6
+ 1908 001c 16000000 		.4byte	.LBE6
+ 1909 0020 18000000 		.4byte	.LBB8
+ 1910 0024 40000000 		.4byte	.LBE8
+ 1911 0028 00000000 		.4byte	0
+ 1912 002c 00000000 		.4byte	0
+ 1913 0030 00000000 		.4byte	.LFB36
+ 1914 0034 48000000 		.4byte	.LFE36
+ 1915 0038 00000000 		.4byte	.LFB35
+ 1916 003c C4000000 		.4byte	.LFE35
+ 1917 0040 00000000 		.4byte	.LFB37
+ 1918 0044 40000000 		.4byte	.LFE37
+ 1919 0048 00000000 		.4byte	0
+ 1920 004c 00000000 		.4byte	0
+ 1921              		.section	.debug_line,"",%progbits
+ 1922              	.Ldebug_line0:
+ 1923 0000 87010000 		.section	.debug_str,"MS",%progbits,1
+ 1923      02000401 
+ 1923      00000201 
+ 1923      FB0E0D00 
+ 1923      01010101 
+ 1924              	.LASF22:
+ 1925 0000 504F5745 		.ascii	"POWERS\000"
+ 1925      525300
+ 1926              	.LASF21:
+ 1927 0007 76616C75 		.ascii	"value\000"
+ 1927      6500
+ 1928              	.LASF18:
+ 1929 000d 68616C66 		.ascii	"halfPeriodsNum\000"
+ 1929      50657269 
+ 1929      6F64734E 
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 37
+
+
+ 1929      756D00
+ 1930              	.LASF33:
+ 1931 001c 636F6465 		.ascii	"codedMsg\000"
+ 1931      644D7367 
+ 1931      00
+ 1932              	.LASF17:
+ 1933 0025 706F7765 		.ascii	"power\000"
+ 1933      7200
+ 1934              	.LASF12:
+ 1935 002b 666C6F61 		.ascii	"float\000"
+ 1935      7400
+ 1936              	.LASF3:
+ 1937 0031 756E7369 		.ascii	"unsigned char\000"
+ 1937      676E6564 
+ 1937      20636861 
+ 1937      7200
+ 1938              	.LASF26:
+ 1939 003f 53696E65 		.ascii	"Sine_Lookup\000"
+ 1939      5F4C6F6F 
+ 1939      6B757000 
+ 1940              	.LASF6:
+ 1941 004b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1941      20756E73 
+ 1941      69676E65 
+ 1941      6420696E 
+ 1941      7400
+ 1942              	.LASF1:
+ 1943 005d 73686F72 		.ascii	"short unsigned int\000"
+ 1943      7420756E 
+ 1943      7369676E 
+ 1943      65642069 
+ 1943      6E7400
+ 1944              	.LASF0:
+ 1945 0070 646F7562 		.ascii	"double\000"
+ 1945      6C6500
+ 1946              	.LASF32:
+ 1947 0077 6D61696E 		.ascii	"main\000"
+ 1947      00
+ 1948              	.LASF23:
+ 1949 007c 46414354 		.ascii	"FACTORIALS\000"
+ 1949      4F524941 
+ 1949      4C5300
+ 1950              	.LASF9:
+ 1951 0087 756E7369 		.ascii	"unsigned int\000"
+ 1951      676E6564 
+ 1951      20696E74 
+ 1951      00
+ 1952              	.LASF20:
+ 1953 0094 6D6F6475 		.ascii	"modulationCoeff\000"
+ 1953      6C617469 
+ 1953      6F6E436F 
+ 1953      65666600 
+ 1954              	.LASF8:
+ 1955 00a4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1955      206C6F6E 
+ 1955      6720756E 
+ 1955      7369676E 
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 38
+
+
+ 1955      65642069 
+ 1956              	.LASF24:
+ 1957 00bb 73696E65 		.ascii	"sinetable\000"
+ 1957      7461626C 
+ 1957      6500
+ 1958              	.LASF29:
+ 1959 00c5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1959      43313120 
+ 1959      352E342E 
+ 1959      31203230 
+ 1959      31363036 
+ 1960 00f8 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 1960      20726576 
+ 1960      6973696F 
+ 1960      6E203233 
+ 1960      37373135 
+ 1961 012b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1961      66756E63 
+ 1961      74696F6E 
+ 1961      2D736563 
+ 1961      74696F6E 
+ 1962              	.LASF31:
+ 1963 0153 433A5C55 		.ascii	"C:\\Users\\Home\\Desktop\\POK\\PWM\\PWM.cydsn\000"
+ 1963      73657273 
+ 1963      5C486F6D 
+ 1963      655C4465 
+ 1963      736B746F 
+ 1964              	.LASF15:
+ 1965 017b 73697A65 		.ascii	"sizetype\000"
+ 1965      74797065 
+ 1965      00
+ 1966              	.LASF27:
+ 1967 0184 50574D5F 		.ascii	"PWM_1_WriteCompare\000"
+ 1967      315F5772 
+ 1967      69746543 
+ 1967      6F6D7061 
+ 1967      726500
+ 1968              	.LASF7:
+ 1969 0197 6C6F6E67 		.ascii	"long long int\000"
+ 1969      206C6F6E 
+ 1969      6720696E 
+ 1969      7400
+ 1970              	.LASF30:
+ 1971 01a5 6D61696E 		.ascii	"main.c\000"
+ 1971      2E6300
+ 1972              	.LASF13:
+ 1973 01ac 63686172 		.ascii	"char\000"
+ 1973      00
+ 1974              	.LASF4:
+ 1975 01b1 73686F72 		.ascii	"short int\000"
+ 1975      7420696E 
+ 1975      7400
+ 1976              	.LASF10:
+ 1977 01bb 5F5F7569 		.ascii	"__uint16_t\000"
+ 1977      6E743136 
+ 1977      5F7400
+ 1978              	.LASF11:
+ARM GAS  C:\Users\Home\AppData\Local\Temp\ccoiCslh.s 			page 39
+
+
+ 1979 01c6 75696E74 		.ascii	"uint16_t\000"
+ 1979      31365F74 
+ 1979      00
+ 1980              	.LASF5:
+ 1981 01cf 6C6F6E67 		.ascii	"long int\000"
+ 1981      20696E74 
+ 1981      00
+ 1982              	.LASF14:
+ 1983 01d8 6C6F6E67 		.ascii	"long double\000"
+ 1983      20646F75 
+ 1983      626C6500 
+ 1984              	.LASF2:
+ 1985 01e4 7369676E 		.ascii	"signed char\000"
+ 1985      65642063 
+ 1985      68617200 
+ 1986              	.LASF16:
+ 1987 01f0 746F5265 		.ascii	"toReturn\000"
+ 1987      7475726E 
+ 1987      00
+ 1988              	.LASF19:
+ 1989 01f9 72656164 		.ascii	"readRate\000"
+ 1989      52617465 
+ 1989      00
+ 1990              	.LASF25:
+ 1991 0202 4C455454 		.ascii	"LETTERS\000"
+ 1991      45525300 
+ 1992              	.LASF28:
+ 1993 020a 50574D5F 		.ascii	"PWM_1_Start\000"
+ 1993      315F5374 
+ 1993      61727400 
+ 1994              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
