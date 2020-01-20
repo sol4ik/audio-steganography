@@ -24,7 +24,9 @@ class Coder:
             print("> coding text message...")
         tmp_msg = ""
         for ch in self.msg:
-            tmp_msg += str(bin(ord(ch)))[2:]
+            to_add = str(bin(ord(ch)))[2:]
+            to_add = '0' * (5 - len(to_add)) + to_add
+            tmp_msg += to_add
         coded_msg = list()
         for ch in tmp_msg:
             for i in range(500):
