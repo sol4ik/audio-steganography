@@ -103,7 +103,7 @@ Since DAC is not implemented in PSoC we decedid to generate the needed sound wav
 
 Here's the **Top Design** for the modulating part.
 
-![top design]()
+![top design](https://github.com/sol4ik/audio-steganography/blob/master/pics/top_design_am.jpg)
 
 ---
 ## ::updates
@@ -119,6 +119,12 @@ Here's the **Top Design** for the modulating part.
 **current problems**
 * no working examples for the FM4 (only the ones for LED blinking)
 
-### ::until Dec 26 [pre-demo]
+### ::until Jan 20 [demo]
+* change devoce for hardware implementation
+* implement amplitude modulation algorithm
+* imlement Python mode for almplitude modulation and demodulation
+
+**current problems**
+* the only way to reproduce the sound wave is to see it using analyzer and LA-viewer
 
 ---
