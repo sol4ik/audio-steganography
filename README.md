@@ -8,7 +8,6 @@ Final project for Principles of Computer Organisation course by **[Solomiia Leno
    2. [decoding](#decoding)
    3. [model](#model)
 3. [hardware](#hardware)
-   1. [schemes](#schemes)
 4. [updates](#updates)
 ---
 ## requirements
